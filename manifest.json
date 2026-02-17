@@ -1,0 +1,17 @@
+{
+  "name": "South Africa & Zanzibar 2027",
+  "short_name": "SA 2027",
+  "description": "Trip companion for the Collins, Lake & Simpson South Africa & Zanzibar adventure",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#B8860B",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1a2e'/><text x='256' y='200' text-anchor='middle' font-size='120' fill='%23B8860B'>🌍</text><text x='256' y='340' text-anchor='middle' font-size='60' font-family='Georgia' fill='white'>SA</text><text x='256' y='410' text-anchor='middle' font-size='40' font-family='Georgia' fill='%23B8860B'>2027</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
