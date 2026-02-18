@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="version" content="v4">
+<meta name="version" content="v6">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SA 2027">
-<meta name="theme-color" content="#B8860B>
+<meta name="theme-color" content="#B8860B">
 <link rel="manifest" href="manifest.json">
-      <link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>South Africa & Zanzibar 2027</title>
 <style>
 :root {
@@ -213,6 +213,28 @@ body {
 .badge.pending { background: rgba(230,126,34,0.2); color: var(--orange); }
 .badge.tobook { background: rgba(220,53,69,0.2); color: var(--red); }
 .badge.consider { background: rgba(52,152,219,0.2); color: var(--blue); }
+.badge.idea { background: rgba(155,89,182,0.2); color: #9b59b6; }
+
+/* Activity Ideas Card */
+.ideas-card {
+  border-left: 3px solid #9b59b6;
+}
+.ideas-card .day-header {
+  background: linear-gradient(135deg, #1a1a3e, #2a1a3e);
+}
+.ideas-card .day-num {
+  color: #9b59b6 !important;
+}
+.ideas-card .timeline-time {
+  font-size: 16px;
+  text-align: center;
+  color: var(--text-dim);
+}
+.ideas-card .idea-source {
+  font-size: 11px;
+  color: #9b59b6;
+  margin-top: 2px;
+}
 
 /* Hotel Cards */
 .hotel-card {
@@ -510,20 +532,20 @@ body {
 
 <div class="header">
   <h1>South Africa & Zanzibar 2027</h1>
-  <div class="subtitle">Collins &middot; Lake &middot; Simpson</div>
+  <div class="subtitle">Collins · Lake · Simpson</div>
 </div>
 
 <div class="countdown" id="countdown">
   <div class="days" id="countdown-days">—</div>
   <div class="label" id="countdown-label">days to go</div>
-  <div class="date-range">7 Jan &ndash; 2 Feb 2027 &middot; 26 Days</div>
+  <div class="date-range">7 Jan – 2 Feb 2027 · 26 Days</div>
 </div>
 
 <div class="tabs" id="tabs">
   <button class="tab active" data-tab="itinerary"><span class="icon">📅</span> Itinerary</button>
   <button class="tab" data-tab="hotels"><span class="icon">🏨</span> Hotels</button>
   <button class="tab" data-tab="flights"><span class="icon">✈️</span> Flights</button>
-  <button class="tab" data-tab="contacts"><span class="icon">📇</span> Contacts</button>
+  <button class="tab" data-tab="contacts"><span class="icon">📋</span> Contacts</button>
   <button class="tab" data-tab="info"><span class="icon">ℹ️</span> Info</button>
 </div>
 
@@ -538,13 +560,47 @@ body {
   <div class="dest-bg"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="ct1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a6b8a"/><stop offset="50%" stop-color="#2980b9"/><stop offset="100%" stop-color="#1abc9c"/></linearGradient></defs><rect fill="url(#ct1)" width="400" height="120"/><path d="M0 90 Q30 40 70 65 Q110 85 140 35 Q160 20 180 30 Q200 45 230 25 L250 35 Q260 50 280 40 L400 90 L400 120 L0 120Z" fill="#2c3e50" opacity="0.5"/><path d="M100 80 L140 30 L160 45 L180 20 L200 50 L220 35 L240 60 L260 45 L280 80Z" fill="#34495e" opacity="0.6"/><circle cx="340" cy="30" r="18" fill="#f39c12" opacity="0.7"/><path d="M0 95 Q100 80 200 92 Q300 100 400 88 L400 120 L0 120Z" fill="#2980b9" opacity="0.4"/></svg></div>
   <div class="dest-overlay"></div>
   <div class="dest-content">
-    <span class="dest-icon">🏙️</span><span class="dest-name">Cape Town</span>
-    <div class="dest-dates">7&ndash;11 January &middot; Winchester Hotel, Sea Point</div>
+    <span class="dest-icon">🏖️</span><span class="dest-name">Cape Town</span>
+    <div class="dest-dates">7–11 January · Winchester Hotel, Sea Point</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
+
+<div class="day-card ideas-card">
+  <div class="day-header" onclick="toggleDay(this)">
+    <div>
+      <div class="day-num">🍽️ Activity Ideas</div>
+      <div class="day-title">Things to consider</div>
+      <div class="day-date">From Linda's Activities Guide — not yet allocated to days</div>
+    </div>
+    <div class="chevron">▼</div>
+  </div>
+  <div class="day-body">
+    <div class="section-header">Key Attractions</div>
+    <div class="timeline-item"><div class="timeline-time">🏝️</div><div class="timeline-content"><div class="activity">Robben Island <span class="badge idea">Idea</span></div><div class="notes">UNESCO site. Ferry from V&A Waterfront, guided tour inc. prison walk with former prisoner. ~3.5 hrs. Book 9:00 AM departure. ~R600pp. Book 3–4 weeks ahead — January sells out.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🏔️</div><div class="timeline-content"><div class="activity">Table Mountain <span class="badge idea">Idea</span></div><div class="notes">Cable car up (~R395 return) or Linda keen to hike Platteklip Gorge (1.5–2.5 hrs, moderate-hard). Meet at TEN67 Eatery on summit. Go early — closes in wind >35 km/h.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🚗</div><div class="timeline-content"><div class="activity">Cape Point & Cape of Good Hope <span class="badge idea">Idea</span></div><div class="notes">Full-day trip to the tip of the Peninsula. Combine with Boulders Beach penguins. 1.5–2 hrs each way.</div></div></div>
+    <div class="section-header">Wine Tours (Linda's Itinerary)</div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Constantia Wine Route <span class="badge idea">Idea</span></div><div class="notes">Beau Constantia → Constantia Glen (lunch) → Groot Constantia. ~5.5 hrs, 34 miles round trip. Historic valley just south of city.</div><div class="idea-source">Linda's wine trade contacts — VIP tastings</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Southern Constantia <span class="badge idea">Idea</span></div><div class="notes">Steenberg Estate → Buitenverwachting → Klein Constantia (lunch). Famous for Vin de Constance. Optional: Alexander Estate near Cape Point.</div><div class="idea-source">Linda's wine trade contacts — VIP tastings</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Duncan Savage Wines <span class="badge idea">Idea</span></div><div class="notes">Urban winery just 5 miles from hotel. Quick half-day — combine with Table Mountain or cycling on same day.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Stellenbosch route (en route to Franschhoek) <span class="badge idea">Idea</span></div><div class="notes">Stellenrust → Waterford Estate (chocolate & wine pairing) → Kleine Zalze for lunch at Terroir. Turn the Day 5 transfer into a wine day.</div><div class="idea-source">Linda's wine trade contacts — VIP tastings</div></div></div>
+    <div class="section-header">Road Cycling (John & Linda)</div>
+    <div class="timeline-item"><div class="timeline-time">🚴</div><div class="timeline-content"><div class="activity">Chapman's Peak – Noordhoek Loop <span class="badge idea">Recommended</span></div><div class="notes">55–65 km. World-class scenery. Rest of group Uber to The Foodbarn or Chapman's Peak Hotel for a 2-hour lunch while J&L ride in.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🚴</div><div class="timeline-content"><div class="activity">False Bay Explorer <span class="badge idea">Idea</span></div><div class="notes">55–70 km. Harder option — Muizenberg to Simon's Town with Redhill climb. Lunch at Bertha's on the quayside.</div></div></div>
+    <div class="section-header">Other Ideas</div>
+    <div class="timeline-item"><div class="timeline-time">⚓</div><div class="timeline-content"><div class="activity">V&A Waterfront <span class="badge idea">Idea</span></div><div class="notes">Shopping, restaurants, Zeitz MOCAA museum, boat trips.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🌿</div><div class="timeline-content"><div class="activity">Kirstenbosch Botanical Gardens <span class="badge idea">Idea</span></div><div class="notes">Stunning gardens on Table Mountain slopes. Summer sunset concerts on Sundays.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🏘️</div><div class="timeline-content"><div class="activity">Bo-Kaap <span class="badge idea">Idea</span></div><div class="notes">Colourful heritage neighbourhood. Cape Malay cooking classes available.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🏖️</div><div class="timeline-content"><div class="activity">Camps Bay & Clifton Beaches <span class="badge idea">Idea</span></div><div class="notes">Backed by the Twelve Apostles. Sundowners at a Camps Bay bar.</div></div></div>
+    <div class="section-header">Dining Options</div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">Casual: Posticino / Kiki <span class="badge idea">Idea</span></div><div class="notes">Walking distance from Winchester. Italian or modern Greek. R150–540pp. Perfect for first night.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">Seafood: Harbour House / Baía / The Codfather <span class="badge idea">Idea</span></div><div class="notes">Harbour House (Kalk Bay), Baía (V&A Waterfront), Codfather (Camps Bay — choose your fish). R250–1,400pp.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">Fine dining: Salsify / Curate / La Petite Colombe <span class="badge idea">Idea</span></div><div class="notes">Salsify (10-course, ocean views), Curate at Ellerman House (R1,800pp), La Petite Colombe (Franschhoek, R1,595pp). Book 4–6 weeks ahead!</div></div></div>
+  </div>
+</div>
 
 <div class="day-card" id="day1">
   <div class="day-header" onclick="toggleDay(this)">
@@ -557,13 +613,13 @@ body {
   </div>
   <div class="day-body">
     <div class="alert warning">Three couples arrive via different routes today.</div>
-    <div class="section-header">Collins &mdash; Emirates via Dubai</div>
+    <div class="section-header">Collins — Emirates via Dubai</div>
     <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">Arrive Cape Town International <span class="badge confirmed">Confirmed</span></div><div class="notes">Emirates via Dubai. Staff/family ticket via Paul.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">+30m</div><div class="timeline-content"><div class="activity">Uber to Winchester Hotel</div><div class="notes">25&ndash;30 min drive to Sea Point.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">+30m</div><div class="timeline-content"><div class="activity">Uber to Winchester Hotel</div><div class="notes">25–30 min drive to Sea Point.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-content"><div class="activity">Check in <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 6932301370. King bed.</div></div></div>
-    <div class="section-header">Lakes & Simpsons &mdash; Qatar via Doha &amp; JNB</div>
+    <div class="section-header">Lakes & Simpsons — Qatar via Doha & JNB</div>
     <div class="timeline-item"><div class="timeline-time">03:55</div><div class="timeline-content"><div class="activity">Arrive OR Tambo (QR 1365) <span class="badge confirmed">Confirmed</span></div><div class="notes">Departed LHR 08:35 on 6 Jan. Terminal A.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">08:10</div><div class="timeline-content"><div class="activity">SA 313: JNB &rarr; CPT <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Ref 7P2HPV. 2h 15m, Economy.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">08:10</div><div class="timeline-content"><div class="activity">SA 313: JNB → CPT <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Ref 7P2HPV. 2h 15m, Economy.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">10:25</div><div class="timeline-content"><div class="activity">Arrive Cape Town</div><div class="notes">Collect bags. 1PC each, max 23kg.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:00</div><div class="timeline-content"><div class="activity">Arrive Winchester Hotel</div><div class="notes">May be early for check-in (14:00). Drop bags.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">First group dinner</div><div class="notes">Free evening in Sea Point. Explore the promenade.</div></div></div>
@@ -576,8 +632,7 @@ body {
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
-    <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Cape Town at leisure</div><div class="notes">Table Mountain, V&A Waterfront, Sea Point promenade.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">PM</div><div class="timeline-content"><div class="activity">Robben Island / city sightseeing <span class="badge consider">Consider</span></div><div class="notes">Robben Island needs advance booking. Limited availability.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Cape Town at leisure</div><div class="notes">See Activity Ideas above for options.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Cape Town</div><div class="notes">Restaurant TBC.</div></div></div>
   </div>
 </div>
@@ -588,8 +643,7 @@ body {
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
-    <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Cape Town at leisure</div><div class="notes">Chapman's Peak, Camps Bay, Clifton beaches.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">PM</div><div class="timeline-content"><div class="activity">Cape Peninsula / Cape Point <span class="badge consider">Consider</span></div><div class="notes">Full day trip option. 1.5&ndash;2 hrs each way.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Cape Town at leisure</div><div class="notes">See Activity Ideas above for options.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Cape Town</div></div></div>
   </div>
 </div>
@@ -600,7 +654,7 @@ body {
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
-    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Free day &mdash; last full day in Cape Town</div><div class="notes">Pack for Franschhoek departure tomorrow.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Free day — last full day in Cape Town</div><div class="notes">Pack for Franschhoek departure tomorrow.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Last evening in Sea Point</div></div></div>
   </div>
 </div>
@@ -614,43 +668,66 @@ body {
   <div class="dest-overlay"></div>
   <div class="dest-content">
     <span class="dest-icon">🍷</span><span class="dest-name">Franschhoek</span>
-    <div class="dest-dates">11&ndash;15 January &middot; W-Collection L'Ermitage Villas</div>
+    <div class="dest-dates">11–15 January · W-Collection L'Ermitage Villas</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day5">
+<div class="day-card ideas-card">
   <div class="day-header" onclick="toggleDay(this)">
-    <div><div class="day-num">Day 5 &mdash; Travel</div><div class="day-title">Cape Town &rarr; Franschhoek</div><div class="day-date">Sunday 11 January</div></div>
+    <div>
+      <div class="day-num">🍽️ Activity Ideas</div>
+      <div class="day-title">Things to consider</div>
+      <div class="day-date">From Linda's Activities Guide — not yet allocated to days</div>
+    </div>
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
-    <div class="alert warning">Travel day &mdash; Moving to Franschhoek</div>
-    <div class="timeline-item"><div class="timeline-time">~10:00</div><div class="timeline-content"><div class="activity">Check out of Winchester Hotel</div><div class="notes">Check-out by 11:00. Aim to leave by 10:00&ndash;10:30.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~10:30</div><div class="timeline-content"><div class="activity">Drive to Franschhoek</div><div class="notes">Uber or pre-booked driver. 60&ndash;75 min via Stellenbosch.</div></div></div>
+    <div class="section-header">Wine Tours (Linda's Itinerary)</div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Tour 1: La Motte Lunch <span class="badge idea">Idea</span></div><div class="notes">Paserene (boutique, terroir-driven) → La Motte for lunch. Beautiful estate, renowned restaurant, walking trails, farm shop. 10.5 miles round trip, ~3.5 hrs.</div><div class="idea-source">Linda's wine trade contacts — VIP tastings</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍇</div><div class="timeline-content"><div class="activity">Tour 2: Boekenhoutskloof & Dinner <span class="badge idea">Idea</span></div><div class="notes">Boekenhoutskloof (home of The Chocolate Block) → Leeu Passant (Mullineux family) → Dinner at Hari Kitchen. 10.6 miles, half day + dinner.</div><div class="idea-source">Linda's wine trade contacts — VIP tastings</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🚂</div><div class="timeline-content"><div class="activity">Franschhoek Wine Tram <span class="badge idea">Idea</span></div><div class="notes">Hop-on hop-off through the valley vineyards. Could work alongside Linda's tours above. Pre-book for 6.</div></div></div>
+    <div class="section-header">Dining</div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">Haute Cabriѐre <span class="badge idea">Idea</span></div><div class="notes">French-inspired wine estate dining. Pierre Jourdan wines. R420–490 for 2–3 courses. Great value. Lunch only.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">JAN Franschhoek <span class="badge idea">Idea</span></div><div class="notes">Michelin-starred Chef Jan Hendrik. Seasonal tasting menu R3,400pp inc. wine pairing. The big one! 1800s cottage at La Motte. Book 4–6 weeks ahead.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">Hari Kitchen <span class="badge idea">Idea</span></div><div class="notes">Contemporary Asian-inspired. Great food and cool décor. Linda's recommendation. Good for Tour 2 dinner.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🍽️</div><div class="timeline-content"><div class="activity">La Petite Colombe <span class="badge idea">Idea</span></div><div class="notes">Contemporary French tasting menu at Leeu Estates. R1,595pp. Book 3–4 weeks ahead.</div></div></div>
+    <div class="section-header">Other</div>
+    <div class="timeline-item"><div class="timeline-time">🏘️</div><div class="timeline-content"><div class="activity">Explore Franschhoek village <span class="badge idea">Idea</span></div><div class="notes">Art galleries, boutique shops, chocolate shops, craft markets.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🏊</div><div class="timeline-content"><div class="activity">Villa pool day <span class="badge idea">Idea</span></div><div class="notes">L'Ermitage Villas have a pool. Perfect for a relaxation day between wine tours.</div></div></div>
+  </div>
+</div>
+
+<div class="day-card" id="day5">
+  <div class="day-header" onclick="toggleDay(this)">
+    <div><div class="day-num">Day 5 — Travel</div><div class="day-title">Cape Town → Franschhoek</div><div class="day-date">Sunday 11 January</div></div>
+    <div class="chevron">▼</div>
+  </div>
+  <div class="day-body">
+    <div class="alert warning">Travel day — Moving to Franschhoek</div>
+    <div class="timeline-item"><div class="timeline-time">~10:00</div><div class="timeline-content"><div class="activity">Check out of Winchester Hotel</div><div class="notes">Check-out by 11:00. Aim to leave by 10:00–10:30.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~10:30</div><div class="timeline-content"><div class="activity">Drive to Franschhoek</div><div class="notes">Uber or pre-booked driver. 60–75 min via Stellenbosch.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:30</div><div class="timeline-content"><div class="activity">Arrive Franschhoek</div><div class="notes">May be early for check-in. Drop bags, explore the village.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-content"><div class="activity">Check in to L'Ermitage Villas <span class="badge confirmed">Confirmed</span></div><div class="notes">Contact: Esme +27 78 513 7808</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Franschhoek</div><div class="notes">John & Linda researching options.</div></div></div>
   </div>
 </div>
 
-<div class="day-card" id="day6"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 6</div><div class="day-title">Franschhoek &mdash; Wine country</div><div class="day-date">Monday 12 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Wine Tram or estate visits <span class="badge consider">Consider</span></div><div class="notes">Wine Tram recommended for one day. Pre-book for 6.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">Lunch</div><div class="timeline-content"><div class="activity">Lunch at a wine estate</div><div class="notes">Many estates offer excellent restaurants.</div></div></div>
+<div class="day-card" id="day6"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 6</div><div class="day-title">Franschhoek</div><div class="day-date">Monday 12 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Franschhoek at leisure</div><div class="notes">See Activity Ideas above for wine tours, tram, and dining options.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Franschhoek</div></div></div>
 </div></div>
 
-<div class="day-card" id="day7"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 7</div><div class="day-title">Franschhoek &mdash; Wine tours</div><div class="day-date">Tuesday 13 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Private wine estate tour <span class="badge consider">Consider</span></div><div class="notes">Private driver for estate visits. 2 vehicles for 6 people.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">PM</div><div class="timeline-content"><div class="activity">Free afternoon</div><div class="notes">Pool, village, relaxation.</div></div></div>
+<div class="day-card" id="day7"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 7</div><div class="day-title">Franschhoek</div><div class="day-date">Tuesday 13 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Franschhoek at leisure</div><div class="notes">See Activity Ideas above for wine tours, tram, and dining options.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Franschhoek</div></div></div>
 </div></div>
 
 <div class="day-card" id="day8"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 8</div><div class="day-title">Franschhoek (last day)</div><div class="day-date">Wednesday 14 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">Pack tonight &mdash; early departure tomorrow for SA 316 09:00 to JNB.</div>
-    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Free day &mdash; last full day in the Winelands</div><div class="notes">Final wine tasting or village exploration.</div></div></div>
+    <div class="alert warning">Pack tonight — early departure tomorrow for SA 316 09:00 to JNB.</div>
+    <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Free day — last full day in the Winelands</div><div class="notes">Final wine tasting or village exploration.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Last evening in Franschhoek</div></div></div>
 </div></div>
 
@@ -663,27 +740,27 @@ body {
   <div class="dest-overlay"></div>
   <div class="dest-content">
     <span class="dest-icon">🦁</span><span class="dest-name">Sediba Safari</span>
-    <div class="dest-dates">15&ndash;19 January &middot; Mountain Lodge, Exclusive Use</div>
+    <div class="dest-dates">15–19 January · Mountain Lodge, Exclusive Use</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day9"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 9 &mdash; Major Travel</div><div class="day-title">Franschhoek &rarr; JNB &rarr; Sediba</div><div class="day-date">Thursday 15 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">Major travel day &mdash; Flight + 3.5&ndash;4 hour road transfer</div>
+<div class="day-card" id="day9"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 9 — Major Travel</div><div class="day-title">Franschhoek → JNB → Sediba</div><div class="day-date">Thursday 15 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert warning">Major travel day — Flight + 3.5–4 hour road transfer</div>
     <div class="timeline-item"><div class="timeline-time">~06:00</div><div class="timeline-content"><div class="activity">Depart Franschhoek for CPT Airport</div><div class="notes">Allow 1.5 hrs for the drive.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">SA 316: CPT &rarr; JNB (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Refs 7P2HPV / 7PAHJ3. 2h, Economy.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">SA 316: CPT → JNB (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Refs 7P2HPV / 7PAHJ3. 2h, Economy.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-content"><div class="activity">Arrive OR Tambo</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~11:30</div><div class="timeline-content"><div class="activity">Meet Sediba road transfer <span class="badge pending">To Arrange</span></div><div class="notes">R6,000 per way. 3.5&ndash;4 hr drive to Welgevonden.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">Arrive Sediba &mdash; Afternoon game drive</div><div class="notes">Settle in, then sunset drive.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~11:30</div><div class="timeline-content"><div class="activity">Meet Sediba road transfer <span class="badge pending">To Arrange</span></div><div class="notes">R6,000 per way. 3.5–4 hr drive to Welgevonden.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">Arrive Sediba — Afternoon game drive</div><div class="notes">Settle in, then sunset drive.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day10-12"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 10&ndash;12</div><div class="day-title">Sediba Game Drives</div><div class="day-date">Fri 16 &ndash; Sun 18 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert info">Malaria-free Big Five reserve. All meals &amp; drinks included.</div>
+<div class="day-card" id="day10-12"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 10–12</div><div class="day-title">Sediba Game Drives</div><div class="day-date">Fri 16 – Sun 18 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert info">Malaria-free Big Five reserve. All meals & drinks included.</div>
     <div class="section-header">Typical Safari Day</div>
-    <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Wake-up call, coffee &amp; rusks</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-content"><div class="activity">Morning game drive (3&ndash;4 hrs)</div><div class="notes">Open vehicle with ranger and tracker.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Wake-up call, coffee & rusks</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-content"><div class="activity">Morning game drive (3–4 hrs)</div><div class="notes">Open vehicle with ranger and tracker.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-content"><div class="activity">Brunch at lodge</div></div></div>
     <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-content"><div class="activity">Free time</div><div class="notes">Pool, spa, bush walks.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">15:30</div><div class="timeline-content"><div class="activity">Afternoon tea</div></div></div>
@@ -699,28 +776,28 @@ body {
   <div class="dest-bg"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="ss1" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a4a1a"/><stop offset="50%" stop-color="#2d6b2d"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs><rect fill="url(#ss1)" width="400" height="120"/><circle cx="340" cy="25" r="16" fill="#e67e22" opacity="0.6"/><path d="M0 65 Q40 50 80 60 Q120 70 160 55 Q200 48 240 58 Q280 65 320 52 Q360 48 400 58 L400 120 L0 120Z" fill="#1a3a1a" opacity="0.5"/><g fill="#0d2a0d" opacity="0.4"><path d="M40 60 L43 20 L50 30 L55 5 L60 30 L67 20 L70 60Z"/><path d="M120 55 L122 25 L127 32 L130 12 L133 32 L138 25 L140 55Z"/><path d="M200 52 L203 15 L209 25 L213 0 L217 25 L223 15 L226 52Z"/><path d="M300 56 L302 28 L306 34 L309 18 L312 34 L316 28 L318 56Z"/><path d="M370 58 L372 35 L375 40 L377 28 L379 40 L382 35 L384 58Z"/></g><path d="M0 85 Q100 78 200 87 Q300 92 400 83 L400 120 L0 120Z" fill="#2d5016" opacity="0.3"/></svg></div>
   <div class="dest-overlay"></div>
   <div class="dest-content">
-    <span class="dest-icon">🐆</span><span class="dest-name">Sabi Sands &mdash; Leopard Hills</span>
-    <div class="dest-dates">19&ndash;22 January &middot; Leopard Hills Private Reserve</div>
+    <span class="dest-icon">🦁</span><span class="dest-name">Sabi Sands — Leopard Hills</span>
+    <div class="dest-dates">19–22 January · Leopard Hills Private Reserve</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day13"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 13 &mdash; Travel</div><div class="day-title">Sediba &rarr; Leopard Hills</div><div class="day-date">Monday 19 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">Travel day &mdash; Road transfer + Federal Air flight</div>
+<div class="day-card" id="day13"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 13 — Travel</div><div class="day-title">Sediba → Leopard Hills</div><div class="day-date">Monday 19 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert warning">Travel day — Road transfer + Federal Air flight</div>
     <div class="timeline-item"><div class="timeline-time">~06:00</div><div class="timeline-content"><div class="activity">Optional short morning game drive</div><div class="notes">Final morning at Sediba.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~08:15</div><div class="timeline-content"><div class="activity">Depart Sediba for OR Tambo</div><div class="notes">3.5&ndash;4 hr road transfer via N1.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><div class="activity">Federal Air: JNB &rarr; Sabi Sands <span class="badge confirmed">Confirmed</span></div><div class="notes">Small aircraft. ~1&ndash;1.5 hr scenic flight.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~08:15</div><div class="timeline-content"><div class="activity">Depart Sediba for OR Tambo</div><div class="notes">3.5–4 hr road transfer via N1.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><div class="activity">Federal Air: JNB → Sabi Sands <span class="badge confirmed">Confirmed</span></div><div class="notes">Small aircraft. ~1–1.5 hr scenic flight.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~15:00</div><div class="timeline-content"><div class="activity">Arrive Leopard Hills <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref: LH019197. Contact: Carmen Brits.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">First Sabi Sands game drive</div><div class="notes">Renowned Big Five and leopard sightings.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day14-15"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 14&ndash;15</div><div class="day-title">Leopard Hills Game Drives</div><div class="day-date">Tue 20 &ndash; Wed 21 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">MALARIA AREA &mdash; Take prophylaxis as prescribed. Repellent essential at dawn/dusk.</div>
+<div class="day-card" id="day14-15"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 14–15</div><div class="day-title">Leopard Hills Game Drives</div><div class="day-date">Tue 20 – Wed 21 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert warning">MALARIA AREA — Take prophylaxis as prescribed. Repellent essential at dawn/dusk.</div>
     <div class="section-header">Typical Safari Day</div>
     <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-content"><div class="activity">Wake-up, coffee</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Morning game drive (3&ndash;4 hrs)</div><div class="notes">Open Land Rover with ranger and tracker.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Morning game drive (3–4 hrs)</div><div class="notes">Open Land Rover with ranger and tracker.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">Brunch</div></div></div>
     <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-content"><div class="activity">Free time</div><div class="notes">Pool, spa, gym, bush walks.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-content"><div class="activity">Sunset game drive</div><div class="notes">Sundowner drinks. Premium beverages included.</div></div></div>
@@ -735,20 +812,20 @@ body {
   <div class="dest-bg"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="jb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a3e"/><stop offset="50%" stop-color="#2c3e6e"/><stop offset="100%" stop-color="#4a3070"/></linearGradient></defs><rect fill="url(#jb1)" width="400" height="120"/><g fill="#3a4a7a" opacity="0.5"><rect x="40" y="40" width="18" height="50" rx="1"/><rect x="65" y="25" width="14" height="65" rx="1"/><rect x="85" y="50" width="20" height="40" rx="1"/><rect x="120" y="30" width="16" height="60" rx="1"/><rect x="145" y="45" width="22" height="45" rx="1"/><rect x="180" y="20" width="12" height="70" rx="1"/><rect x="200" y="35" width="24" height="55" rx="1"/><rect x="235" y="42" width="16" height="48" rx="1"/><rect x="260" y="28" width="18" height="62" rx="1"/><rect x="290" y="38" width="20" height="52" rx="1"/><rect x="320" y="50" width="14" height="40" rx="1"/><rect x="345" y="32" width="22" height="58" rx="1"/></g><g fill="#f39c12" opacity="0.15"><rect x="45" y="45" width="3" height="3"/><rect x="55" y="55" width="3" height="3"/><rect x="70" y="35" width="3" height="3"/><rect x="90" y="55" width="3" height="3"/><rect x="125" y="40" width="3" height="3"/><rect x="150" y="52" width="3" height="3"/><rect x="185" y="30" width="3" height="3"/><rect x="210" y="45" width="3" height="3"/><rect x="265" y="38" width="3" height="3"/><rect x="295" y="48" width="3" height="3"/><rect x="350" y="42" width="3" height="3"/></g><path d="M0 90 L400 90 L400 120 L0 120Z" fill="#1a1a2e" opacity="0.4"/></svg></div>
   <div class="dest-overlay"></div>
   <div class="dest-content">
-    <span class="dest-icon">🏙️</span><span class="dest-name">Johannesburg Overnight</span>
-    <div class="dest-dates">22 January &middot; Radisson Blu Gautrain, Sandton</div>
+    <span class="dest-icon">🏖️</span><span class="dest-name">Johannesburg Overnight</span>
+    <div class="dest-dates">22 January · Radisson Blu Gautrain, Sandton</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day16"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 16 &mdash; Travel</div><div class="day-title">Leopard Hills &rarr; JNB</div><div class="day-date">Thursday 22 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day16"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 16 — Travel</div><div class="day-title">Leopard Hills → JNB</div><div class="day-date">Thursday 22 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Pack for Zanzibar tonight! KQ761 departs 12:05 tomorrow.</div>
     <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Last morning game drive</div><div class="notes">Make it count!</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:00</div><div class="timeline-content"><div class="activity">Check out of Leopard Hills</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><div class="activity">Federal Air: Leopard Hills &rarr; JNB</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~15:15</div><div class="timeline-content"><div class="activity">Gautrain: OR Tambo &rarr; Sandton</div><div class="notes">15 min direct train.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><div class="activity">Federal Air: Leopard Hills → JNB</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~15:15</div><div class="timeline-content"><div class="activity">Gautrain: OR Tambo → Sandton</div><div class="notes">15 min direct train.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~15:30</div><div class="timeline-content"><div class="activity">Check in Radisson Blu <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 5607174646. 3 rooms.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Sandton</div><div class="notes">Nelson Mandela Square area.</div></div></div>
 </div></div>
@@ -762,27 +839,27 @@ body {
   <div class="dest-overlay"></div>
   <div class="dest-content">
     <span class="dest-icon">🏝️</span><span class="dest-name">Zanzibar</span>
-    <div class="dest-dates">23 Jan &ndash; 2 Feb &middot; The Mora, Matemwe</div>
+    <div class="dest-dates">23 Jan – 2 Feb · The Mora, Matemwe</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day17"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 17 &mdash; Travel</div><div class="day-title">JNB &rarr; Zanzibar</div><div class="day-date">Friday 23 January</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">Yellow Fever certificate &amp; e-Visa/ZIC docs required. Have in hand luggage!</div>
+<div class="day-card" id="day17"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 17 — Travel</div><div class="day-title">JNB → Zanzibar</div><div class="day-date">Friday 23 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert warning">Yellow Fever certificate & e-Visa/ZIC docs required. Have in hand luggage!</div>
     <div class="timeline-item"><div class="timeline-time">~08:00</div><div class="timeline-content"><div class="activity">Check out Radisson, Gautrain to OR Tambo</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-content"><div class="activity">KQ761: JNB &rarr; Nairobi (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Collins FN 1117-451-559. L&S FN 1112-214-736.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">NBO</div><div class="timeline-content"><div class="activity">Transit &rarr; KQ494: NBO &rarr; ZNZ</div><div class="notes">Total journey 6h 55m.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-content"><div class="activity">KQ761: JNB → Nairobi (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Collins FN 1117-451-559. L&S FN 1112-214-736.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">NBO</div><div class="timeline-content"><div class="activity">Transit → KQ494: NBO → ZNZ</div><div class="notes">Total journey 6h 55m.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-content"><div class="activity">Arrive Zanzibar</div><div class="notes">Immigration: e-Visa + ZIC insurance.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">+75m</div><div class="timeline-content"><div class="activity">Minibus to The Mora <span class="badge confirmed">Prov. Booked</span></div><div class="notes">60&ndash;75 min. $150 minibus for all 6.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">+75m</div><div class="timeline-content"><div class="activity">Minibus to The Mora <span class="badge confirmed">Prov. Booked</span></div><div class="notes">60–75 min. $150 minibus for all 6.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~21:15</div><div class="timeline-content"><div class="activity">Arrive The Mora</div><div class="notes">Welcome and check in. First evening on the beach!</div></div></div>
 </div></div>
 
-<div class="day-card" id="day18-26"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 18&ndash;26</div><div class="day-title">Zanzibar at Leisure</div><div class="day-date">Sat 24 Jan &ndash; Sun 1 February</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert info">MALARIA AREA &mdash; Continue taking prophylaxis throughout your stay.</div>
+<div class="day-card" id="day18-26"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 18–26</div><div class="day-title">Zanzibar at Leisure</div><div class="day-date">Sat 24 Jan – Sun 1 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert info">MALARIA AREA — Continue taking prophylaxis throughout your stay.</div>
     <div class="section-header">Suggested Activities (all optional)</div>
-    <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Beach &amp; pool at The Mora</div><div class="notes">White sand, Indian Ocean.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Beach & pool at The Mora</div><div class="notes">White sand, Indian Ocean.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Stone Town cultural tour <span class="badge consider">Consider</span></div><div class="notes">UNESCO site. ~1 hr drive.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Spice farm tour <span class="badge consider">Consider</span></div><div class="notes">Clove, vanilla, cinnamon farms.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Mnemba Atoll snorkelling <span class="badge consider">Consider</span></div><div class="notes">World-class reef just offshore.</div></div></div>
@@ -798,33 +875,34 @@ body {
   <div class="dest-overlay"></div>
   <div class="dest-content">
     <span class="dest-icon">✈️</span><span class="dest-name">Departure</span>
-    <div class="dest-dates">2&ndash;3 February &middot; Group splits</div>
+    <div class="dest-dates">2–3 February · Group splits</div>
   </div>
 
   <div class="dest-chevron">▼</div>
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day27"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Departures</div><div class="day-title">Zanzibar &rarr; Home</div><div class="day-date">Monday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
-    <div class="alert warning">Group splits: Collins to Dubai, Lakes &amp; Simpsons to JNB.</div>
-    <div class="section-header">Collins &mdash; FlyDubai to Dubai</div>
-    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">Transfer to Zanzibar Airport <span class="badge pending">TBC</span></div><div class="notes">60&ndash;75 min. If FZ1260 (dep 08:00), share minibus with L&S.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">FlyDubai: ZNZ &rarr; Dubai <span class="badge tobook">To Book</span></div><div class="notes">Likely FZ1260 dep 08:00 arr 14:35. Visiting Paul, Emily &amp; grandchildren.</div></div></div>
-    <div class="section-header">Lakes &amp; Simpsons &mdash; Return to JNB</div>
+<div class="day-card" id="day27"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 — Departures</div><div class="day-title">Zanzibar → Home</div><div class="day-date">Monday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+    <div class="alert warning">Group splits: Collins to Dubai, Lakes & Simpsons to JNB.</div>
+    <div class="section-header">Collins — FlyDubai to Dubai</div>
+    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">Transfer to Zanzibar Airport <span class="badge pending">TBC</span></div><div class="notes">60–75 min. If FZ1260 (dep 08:00), share minibus with L&S.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">FlyDubai: ZNZ → Dubai <span class="badge tobook">To Book</span></div><div class="notes">Likely FZ1260 dep 08:00 arr 14:35. Visiting Paul, Emily & grandchildren.</div></div></div>
+    <div class="section-header">Lakes & Simpsons — Return to JNB</div>
     <div class="timeline-item"><div class="timeline-time">~07:30</div><div class="timeline-content"><div class="activity">Transfer to Zanzibar Airport</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">09:50</div><div class="timeline-content"><div class="activity">KQ491/KQ762: ZNZ &rarr; JNB <span class="badge confirmed">Confirmed</span></div><div class="notes">7h via Nairobi. Arrive JNB 15:50.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">09:50</div><div class="timeline-content"><div class="activity">KQ491/KQ762: ZNZ → JNB <span class="badge confirmed">Confirmed</span></div><div class="notes">7h via Nairobi. Arrive JNB 15:50.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~16:30</div><div class="timeline-content"><div class="activity">Check in Radisson Blu Sandton <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 5090900298. 2 rooms, L&S only.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day28"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 28</div><div class="day-title">Lakes &amp; Simpsons &rarr; London</div><div class="day-date">Tuesday 3 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day28"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 28</div><div class="day-title">Lakes & Simpsons → London</div><div class="day-date">Tuesday 3 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Free morning in Sandton</div><div class="notes">Flight not until 20:20. Relax, explore.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-content"><div class="activity">Check out Radisson Blu</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~17:30</div><div class="timeline-content"><div class="activity">Gautrain to OR Tambo</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">20:20</div><div class="timeline-content"><div class="activity">QR 1378: JNB &rarr; Doha <span class="badge confirmed">Confirmed</span></div><div class="notes">Both couples. Business Class.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">+1 day</div><div class="timeline-content"><div class="activity">Lakes: QR 0109 DOH &rarr; LHR 14:00</div><div class="notes">Simpsons: later flight (10hr layover).</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">20:20</div><div class="timeline-content"><div class="activity">QR 1378: JNB → Doha <span class="badge confirmed">Confirmed</span></div><div class="notes">Both couples. Business Class.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">+1 day</div><div class="timeline-content"><div class="activity">Lakes: QR 0109 DOH → LHR 14:00</div><div class="notes">Simpsons: later flight (10hr layover).</div></div></div>
 </div></div>
 
-</div></div>
+</div>
+</div>
 </div>
 
 
@@ -832,70 +910,70 @@ body {
 <div class="section" id="section-hotels">
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hct" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a6b8a"/><stop offset="100%" stop-color="#1abc9c"/></linearGradient></defs><rect fill="url(#hct)" width="400" height="100"/><path d="M0 60 Q50 45 100 55 Q150 65 200 50 Q250 40 300 55 Q350 65 400 50 L400 100 L0 100Z" fill="#2c3e50" opacity="0.4"/><circle cx="350" cy="22" r="14" fill="#f39c12" opacity="0.5"/></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Cape Town &middot; Sea Point</div><h3>The Winchester Hotel</h3><div class="dates">7&ndash;11 January &middot; 4 Nights &middot; All 6</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hct" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a6b8a"/><stop offset="100%" stop-color="#1abc9c"/></linearGradient></defs><rect fill="url(#hct)" width="400" height="100"/><path d="M0 60 Q50 45 100 55 Q150 65 200 50 Q250 40 300 55 Q350 65 400 50 L400 100 L0 100Z" fill="#2c3e50" opacity="0.4"/><circle cx="350" cy="22" r="14" fill="#f39c12" opacity="0.5"/></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Cape Town · Sea Point</div><h3>The Winchester Hotel</h3><div class="dates">7–11 January · 4 Nights · All 6</div></div></div>
   <div class="hotel-detail"><div class="label">Rooms</div><div class="value">3 x Loft Rooms (breakfast incl.)</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;1,443 per couple</div></div>
-  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6932301370 &middot; PIN: 0490</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£1,443 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6932301370 · PIN: 0490</div></div>
   <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Confirmed</span></div></div>
-  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">14:00 &middot; Check-out: 11:00</div></div>
+  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">14:00 · Check-out: 11:00</div></div>
   <div class="hotel-detail"><div class="label">Contact</div><div class="value"><a href="tel:+27214342351" style="color:var(--gold)">+27 21 434 2351</a></div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hfh" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0%" stop-color="#2d5016"/><stop offset="100%" stop-color="#b8860b"/></linearGradient></defs><rect fill="url(#hfh)" width="400" height="100"/><path d="M0 55 Q60 45 120 58 Q180 65 240 52 Q300 45 360 56 L400 50 L400 100 L0 100Z" fill="#4a7c1e" opacity="0.4"/><g fill="#2d5016" opacity="0.3"><rect x="40" y="50" width="2" height="20"/><rect x="80" y="45" width="2" height="25"/><rect x="120" y="48" width="2" height="22"/><rect x="160" y="52" width="2" height="18"/><rect x="200" y="46" width="2" height="24"/><rect x="240" y="50" width="2" height="20"/><rect x="280" y="44" width="2" height="26"/><rect x="320" y="49" width="2" height="21"/><rect x="360" y="47" width="2" height="23"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Franschhoek &middot; Winelands</div><h3>W-Collection L'Ermitage Villas</h3><div class="dates">11&ndash;15 January &middot; 4 Nights &middot; All 6</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hfh" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0%" stop-color="#2d5016"/><stop offset="100%" stop-color="#b8860b"/></linearGradient></defs><rect fill="url(#hfh)" width="400" height="100"/><path d="M0 55 Q60 45 120 58 Q180 65 240 52 Q300 45 360 56 L400 50 L400 100 L0 100Z" fill="#4a7c1e" opacity="0.4"/><g fill="#2d5016" opacity="0.3"><rect x="40" y="50" width="2" height="20"/><rect x="80" y="45" width="2" height="25"/><rect x="120" y="48" width="2" height="22"/><rect x="160" y="52" width="2" height="18"/><rect x="200" y="46" width="2" height="24"/><rect x="240" y="50" width="2" height="20"/><rect x="280" y="44" width="2" height="26"/><rect x="320" y="49" width="2" height="21"/><rect x="360" y="47" width="2" height="23"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Franschhoek · Winelands</div><h3>W-Collection L'Ermitage Villas</h3><div class="dates">11–15 January · 4 Nights · All 6</div></div></div>
   <div class="hotel-detail"><div class="label">Villas</div><div class="value">1 x 2-Bed Mountain View + 1 x 1-Bed Village View</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;439 per couple</div></div>
-  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6788696285 &middot; PIN: 9019</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£439 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6788696285 · PIN: 9019</div></div>
   <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge pending">Deposit Due</span></div></div>
-  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">14:00 &middot; Check-out: 11:00</div></div>
-  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Esme &middot; <a href="tel:+27785137808" style="color:var(--gold)">+27 78 513 7808</a></div></div>
+  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">14:00 · Check-out: 11:00</div></div>
+  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Esme · <a href="tel:+27785137808" style="color:var(--gold)">+27 78 513 7808</a></div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hsd" x1="0" y1="0" x2="1" y2="0.8"><stop offset="0%" stop-color="#c0792a"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs><rect fill="url(#hsd)" width="400" height="100"/><circle cx="360" cy="20" r="16" fill="#f39c12" opacity="0.6"/><path d="M0 60 Q100 50 200 62 Q300 70 400 55 L400 100 L0 100Z" fill="#8b6508" opacity="0.35"/><g fill="#5d4e37" opacity="0.25"><path d="M100 55 L103 25 L108 32 L112 10 L116 32 L121 25 L124 55Z"/><path d="M250 58 L252 35 L255 40 L258 28 L261 40 L264 35 L266 58Z"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Welgevonden &middot; Limpopo</div><h3>Sediba Safari Lodge</h3><div class="dates">15&ndash;19 January &middot; 4 Nights &middot; Exclusive Use</div></div></div>
-  <div class="hotel-detail"><div class="label">Lodge</div><div class="value">Mountain Lodge &mdash; Exclusive for 6</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;2,494 per couple</div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hsd" x1="0" y1="0" x2="1" y2="0.8"><stop offset="0%" stop-color="#c0792a"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs><rect fill="url(#hsd)" width="400" height="100"/><circle cx="360" cy="20" r="16" fill="#f39c12" opacity="0.6"/><path d="M0 60 Q100 50 200 62 Q300 70 400 55 L400 100 L0 100Z" fill="#8b6508" opacity="0.35"/><g fill="#5d4e37" opacity="0.25"><path d="M100 55 L103 25 L108 32 L112 10 L116 32 L121 25 L124 55Z"/><path d="M250 58 L252 35 L255 40 L258 28 L261 40 L264 35 L266 58Z"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Welgevonden · Limpopo</div><h3>Sediba Safari Lodge</h3><div class="dates">15–19 January · 4 Nights · Exclusive Use</div></div></div>
+  <div class="hotel-detail"><div class="label">Lodge</div><div class="value">Mountain Lodge — Exclusive for 6</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£2,494 per couple</div></div>
   <div class="hotel-detail"><div class="label">Includes</div><div class="value">All meals, drinks, 2 game drives/day</div></div>
   <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge pending">Deposit Paid</span></div></div>
-  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Wayne &middot; <a href="mailto:wayne@sediba.com" style="color:var(--gold)">wayne@sediba.com</a></div></div>
+  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Wayne · <a href="mailto:wayne@sediba.com" style="color:var(--gold)">wayne@sediba.com</a></div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hss" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a4a1a"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs><rect fill="url(#hss)" width="400" height="100"/><path d="M0 55 Q80 45 160 58 Q240 65 320 50 Q360 45 400 55 L400 100 L0 100Z" fill="#1a3a1a" opacity="0.4"/><g fill="#0d2a0d" opacity="0.3"><path d="M80 50 L83 20 L88 28 L92 5 L96 28 L101 20 L104 50Z"/><path d="M220 52 L222 28 L225 33 L228 18 L231 33 L234 28 L236 52Z"/><path d="M340 48 L342 25 L346 30 L349 15 L352 30 L356 25 L358 48Z"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Sabi Sands &middot; Mpumalanga</div><h3>Leopard Hills Private Game Reserve</h3><div class="dates">19&ndash;22 January &middot; 3 Nights &middot; All 6</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hss" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a4a1a"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs><rect fill="url(#hss)" width="400" height="100"/><path d="M0 55 Q80 45 160 58 Q240 65 320 50 Q360 45 400 55 L400 100 L0 100Z" fill=""1a3a1a" opacity="0.4"/><g fill="#0d2a0d" opacity="0.3"><path d="M80 50 L83 20 L88 28 L92 5 L96 28 L101 20 L104 50Z"/><path d="M220 52 L222 28 L225 33 L228 18 L231 33 L234 28 L236 52Z"/><path d="M340 48 L342 25 L346 30 L349 15 L352 30 L356 25 L358 48Z"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Sabi Sands · Mpumalanga</div><h3>Leopard Hills Private Game Reserve</h3><div class="dates">19–22 January · 3 Nights · All 6</div></div></div>
   <div class="hotel-detail"><div class="label">Suites</div><div class="value">3 x Luxury Suites</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;6,070 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£6,070 per couple</div></div>
   <div class="hotel-detail"><div class="label">Includes</div><div class="value">All meals, premium drinks, game drives, Federal Air flights</div></div>
   <div class="hotel-detail"><div class="label">Ref</div><div class="value">LH019197</div></div>
   <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge pending">Deposit Paid</span></div></div>
-  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Carmen &middot; <a href="tel:+27113260739" style="color:var(--gold)">+27 11 326 0739</a></div></div>
+  <div class="hotel-detail"><div class="label">Contact</div><div class="value">Carmen · <a href="tel:+27113260739" style="color:var(--gold)">+27 11 326 0739</a></div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hjb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a3e"/><stop offset="100%" stop-color="#4a3070"/></linearGradient></defs><rect fill="url(#hjb)" width="400" height="100"/><g fill="#3a4a7a" opacity="0.4"><rect x="40" y="30" width="16" height="45" rx="1"/><rect x="65" y="20" width="12" height="55" rx="1"/><rect x="90" y="35" width="18" height="40" rx="1"/><rect x="130" y="25" width="14" height="50" rx="1"/><rect x="170" y="32" width="20" height="43" rx="1"/><rect x="220" y="22" width="12" height="53" rx="1"/><rect x="260" y="28" width="16" height="47" rx="1"/><rect x="300" y="35" width="22" height="40" rx="1"/><rect x="340" y="25" width="14" height="50" rx="1"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Johannesburg &middot; Sandton</div><h3>Radisson Blu Gautrain Hotel</h3><div class="dates">22 January &middot; 1 Night &middot; All 6</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hjb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a3e"/><stop offset="100%" stop-color="#4a3070"/></linearGradient></defs><rect fill="url(#hjb)" width="400" height="100"/><g fill="#3a4a7a" opacity="0.4"><rect x="40" y="30" width="16" height="45" rx="1"/><rect x="65" y="20" width="12" height="55" rx="1"/><rect x="90" y="35" width="18" height="40" rx="1"/><rect x="130" y="25" width="14" height="50" rx="1"/><rect x="170" y="32" width="20" height="43" rx="1"/><rect x="220" y="22" width="12" height="53" rx="1"/><rect x="260" y="28" width="16" height="47" rx="1"/><rect x="300" y="35" width="22" height="40" rx="1"/><rect x="340" y="25" width="14" height="50" rx="1"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Johannesburg · Sandton</div><h3>Radisson Blu Gautrain Hotel</h3><div class="dates">22 January · 1 Night · All 6</div></div></div>
   <div class="hotel-detail"><div class="label">Rooms</div><div class="value">3 x Standard Room</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;101 per couple</div></div>
-  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#5607174646 &middot; PIN: 3006</div></div>
-  <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Paid &amp; Confirmed</span></div></div>
-  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">15:00 &middot; Check-out: 11:00</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£101 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#5607174646 · PIN: 3006</div></div>
+  <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Paid & Confirmed</span></div></div>
+  <div class="hotel-detail"><div class="label">Check-in</div><div class="value">15:00 · Check-out: 11:00</div></div>
   <div class="hotel-detail"><div class="label">Note</div><div class="value">Opposite Gautrain station. 15 min to OR Tambo.</div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hzn" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect fill="url(#hzn)" width="400" height="100"/><circle cx="55" cy="22" r="16" fill="#fbbf24" opacity="0.6"/><path d="M0 55 Q50 48 100 55 Q150 62 200 52 Q250 45 300 55 Q350 62 400 52 L400 100 L0 100Z" fill="#0891b2" opacity="0.35"/><path d="M0 70 Q60 63 120 70 Q180 77 240 67 Q300 60 360 70 L400 66 L400 100 L0 100Z" fill="#0d9488" opacity="0.25"/></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Zanzibar &middot; Matemwe</div><h3>The Mora Zanzibar</h3><div class="dates">23 Jan &ndash; 2 Feb &middot; 10 Nights &middot; All 6</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hzn" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect fill="url(#hzn)" width="400" height="100"/><circle cx="55" cy="22" r="16" fill="#fbbf24" opacity="0.6"/><path d="M0 55 Q50 48 100 55 Q150 62 200 52 Q250 45 300 55 Q350 62 400 52 L400 100 L0 100Z" fill="#0891b2" opacity="0.35"/><path d="M0 70 Q60 63 120 70 Q180 77 240 67 Q300 60 360 70 L400 66 L400 100 L0 100Z" fill="#0d9488" opacity="0.25"/></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Zanzibar · Matemwe</div><h3>The Mora Zanzibar</h3><div class="dates">23 Jan – 2 Feb · 10 Nights · All 6</div></div></div>
   <div class="hotel-detail"><div class="label">Suites</div><div class="value">3 x Superior Junior Suite King, Ocean View</div></div>
   <div class="hotel-detail"><div class="label">Board</div><div class="value">Luxury All Inclusive</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;4,141 per couple</div></div>
-  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6932349660 &middot; PIN: 6279</div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£4,141 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#6932349660 · PIN: 6279</div></div>
   <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Confirmed</span></div></div>
   <div class="hotel-detail"><div class="label">Contact</div><div class="value"><a href="tel:+255773301038" style="color:var(--gold)">+255 773 301 038</a></div></div>
 </div>
 
 <div class="hotel-card">
-  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hjr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a3e"/><stop offset="100%" stop-color="#4a3070"/></linearGradient></defs><rect fill="url(#hjr)" width="400" height="100"/><g fill="#3a4a7a" opacity="0.4"><rect x="50" y="32" width="16" height="43" rx="1"/><rect x="75" y="22" width="12" height="53" rx="1"/><rect x="100" y="38" width="18" height="37" rx="1"/><rect x="140" y="27" width="14" height="48" rx="1"/><rect x="180" y="34" width="20" height="41" rx="1"/><rect x="230" y="24" width="12" height="51" rx="1"/><rect x="270" y="30" width="16" height="45" rx="1"/><rect x="310" y="37" width="22" height="38" rx="1"/><rect x="350" y="27" width="14" height="48" rx="1"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Johannesburg &middot; Sandton (Return)</div><h3>Radisson Blu Gautrain Hotel</h3><div class="dates">2 February &middot; 1 Night &middot; Lakes &amp; Simpsons Only</div></div></div>
+  <div class="hotel-banner"><div class="hotel-bg"><svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hjr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a3e"/><stop offset="100%" stop-color="#4a3070"/></linearGradient></defs><rect fill="url(#hjr)" width="400" height="100"/><g fill="#3a4a7a" opacity="0.4"><rect x="50" y="32" width="16" height="43" rx="1"/><rect x="75" y="22" width="12" height="53" rx="1"/><rect x="100" y="38" width="18" height="37" rx="1"/><rect x="140" y="27" width="14" height="48" rx="1"/><rect x="180" y="34" width="20" height="41" rx="1"/><rect x="230" y="24" width="12" height="51" rx="1"/><rect x="270" y="30" width="16" height="45" rx="1"/><rect x="310" y="37" width="22" height="38" rx="1"/><rect x="350" y="27" width="14" height="48" rx="1"/></g></svg></div><div class="hotel-overlay"></div><div class="hotel-text"><div class="location">Johannesburg · Sandton (Return)</div><h3>Radisson Blu Gautrain Hotel</h3><div class="dates">2 February · 1 Night · Lakes & Simpsons Only</div></div></div>
   <div class="hotel-detail"><div class="label">Rooms</div><div class="value">2 x Standard Room (4 adults)</div></div>
-  <div class="hotel-detail"><div class="label">Cost</div><div class="value">&pound;106 per couple</div></div>
-  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#5090900298 &middot; PIN: 5901</div></div>
-  <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Paid &amp; Confirmed</span></div></div>
+  <div class="hotel-detail"><div class="label">Cost</div><div class="value">£106 per couple</div></div>
+  <div class="hotel-detail"><div class="label">Booking Ref</div><div class="value">#5090900298 · PIN: 5901</div></div>
+  <div class="hotel-detail"><div class="label">Status</div><div class="value"><span class="badge confirmed">Paid & Confirmed</span></div></div>
 </div>
 
 </div>
@@ -907,76 +985,76 @@ body {
 
 <div class="flight-card">
   <div class="flight-date">6 January 2027</div>
-  <div class="flight-route"><span class="from">LHR</span><span class="arrow">&rarr;</span><span class="to">DOH</span><span class="arrow">&rarr;</span><span class="to">JNB</span></div>
-  <div class="flight-detail-row"><strong>Qatar Airways QR0010 / QR1365</strong> &middot; Lakes &amp; Simpsons <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">LHR T4 08:35 &rarr; DOH 18:15 &rarr; JNB 03:55 (+1)</div>
-  <div class="flight-detail-row">Lakes: &pound;4,497 (Ref 8ICLP6) &middot; Simpsons: &pound;4,419</div>
+  <div class="flight-route"><span class="from">LHR</span><span class="arrow">→</span><span class="to">DOH</span><span class="arrow">→</span><span class="to">JNB</span></div>
+  <div class="flight-detail-row"><strong>Qatar Airways QR0010 / QR1365</strong> · Lakes & Simpsons <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">LHR T4 08:35 → DOH 18:15 → JNB 03:55 (+1)</div>
+  <div class="flight-detail-row">Lakes: £4,497 (Ref 8ICLP6) · Simpsons: £4,419</div>
 </div>
 
 <div class="flight-card">
-  <div class="flight-date">6&ndash;7 January 2027</div>
-  <div class="flight-route"><span class="from">LHR</span><span class="arrow">&rarr;</span><span class="to">DXB</span><span class="arrow">&rarr;</span><span class="to">CPT</span></div>
-  <div class="flight-detail-row"><strong>Emirates</strong> &middot; Collins only <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">Staff/family discount via Paul. ~&pound;2,900</div>
+  <div class="flight-date">6–7 January 2027</div>
+  <div class="flight-route"><span class="from">LHR</span><span class="arrow">→</span><span class="to">DXB</span><span class="arrow">→</span><span class="to">CPT</span></div>
+  <div class="flight-detail-row"><strong>Emirates</strong> · Collins only <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">Staff/family discount via Paul. ~£2,900</div>
 </div>
 
 <div class="section-header">Internal Flights</div>
 
 <div class="flight-card">
   <div class="flight-date">7 January</div>
-  <div class="flight-route"><span class="from">JNB</span><span class="arrow">&rarr;</span><span class="to">CPT</span></div>
-  <div class="flight-detail-row"><strong>SA 313</strong> 08:10&rarr;10:25 &middot; Lakes &amp; Simpsons <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">SAA Ref 7P2HPV &middot; Economy</div>
+  <div class="flight-route"><span class="from">JNB</span><span class="arrow">→</span><span class="to">CPT</span></div>
+  <div class="flight-detail-row"><strong>SA 313</strong> 08:10→10:25 · Lakes & Simpsons <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">SAA Ref 7P2HPV · Economy</div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">15 January</div>
-  <div class="flight-route"><span class="from">CPT</span><span class="arrow">&rarr;</span><span class="to">JNB</span></div>
-  <div class="flight-detail-row"><strong>SA 316</strong> 09:00&rarr;11:00 &middot; All 6 <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">Refs 7P2HPV / 7PAHJ3 &middot; Economy</div>
+  <div class="flight-route"><span class="from">CPT</span><span class="arrow">→</span><span class="to">JNB</span></div>
+  <div class="flight-detail-row"><strong>SA 316</strong> 09:00→11:00 · All 6 <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">Refs 7P2HPV / 7PAHJ3 · Economy</div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">19 January</div>
-  <div class="flight-route"><span class="from">JNB</span><span class="arrow">&rarr;</span><span class="to">Sabi Sands</span></div>
-  <div class="flight-detail-row"><strong>Federal Air</strong> 13:30 &middot; All 6 <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">&pound;845/couple &middot; Tickets pending balance payment</div>
+  <div class="flight-route"><span class="from">JNB</span><span class="arrow">→</span><span class="to">Sabi Sands</span></div>
+  <div class="flight-detail-row"><strong>Federal Air</strong> 13:30 · All 6 <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">£845/couple · Tickets pending balance payment</div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">22 January</div>
-  <div class="flight-route"><span class="from">Leopard Hills</span><span class="arrow">&rarr;</span><span class="to">JNB</span></div>
-  <div class="flight-detail-row"><strong>Federal Air</strong> 13:30 &middot; All 6 <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-route"><span class="from">Leopard Hills</span><span class="arrow">→</span><span class="to">JNB</span></div>
+  <div class="flight-detail-row"><strong>Federal Air</strong> 13:30 · All 6 <span class="badge confirmed">Confirmed</span></div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">23 January</div>
-  <div class="flight-route"><span class="from">JNB</span><span class="arrow">&rarr;</span><span class="to">NBO</span><span class="arrow">&rarr;</span><span class="to">ZNZ</span></div>
-  <div class="flight-detail-row"><strong>Kenya Airways KQ761/KQ494</strong> &middot; All 6 <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">12:05&rarr;20:00 via Nairobi &middot; Collins &pound;936, L&S &pound;1,280/couple</div>
+  <div class="flight-route"><span class="from">JNB</span><span class="arrow">→</span><span class="to">NBO</span><span class="arrow">→</span><span class="to">ZNZ</span></div>
+  <div class="flight-detail-row"><strong>Kenya Airways KQ761/KQ494</strong> · All 6 <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">12:05→20:00 via Nairobi · Collins £936, L&S £1,280/couple</div>
 </div>
 
 <div class="section-header">Return Flights</div>
 
 <div class="flight-card">
   <div class="flight-date">2 February</div>
-  <div class="flight-route"><span class="from">ZNZ</span><span class="arrow">&rarr;</span><span class="to">DXB</span></div>
-  <div class="flight-detail-row"><strong>FlyDubai</strong> &middot; Collins only <span class="badge tobook">To Book</span></div>
+  <div class="flight-route"><span class="from">ZNZ</span><span class="arrow">→</span><span class="to">DXB</span></div>
+  <div class="flight-detail-row"><strong>FlyDubai</strong> · Collins only <span class="badge tobook">To Book</span></div>
   <div class="flight-detail-row">Likely FZ1260 dep 08:00, arr Dubai 14:35</div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">2 February</div>
-  <div class="flight-route"><span class="from">ZNZ</span><span class="arrow">&rarr;</span><span class="to">NBO</span><span class="arrow">&rarr;</span><span class="to">JNB</span></div>
-  <div class="flight-detail-row"><strong>Kenya Airways KQ491/KQ762</strong> &middot; Lakes &amp; Simpsons <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">09:50&rarr;15:50 via Nairobi</div>
+  <div class="flight-route"><span class="from">ZNZ</span><span class="arrow">→</span><span class="to">NBO</span><span class="arrow">→</span><span class="to">JNB</span></div>
+  <div class="flight-detail-row"><strong>Kenya Airways KQ491/KQ762</strong> · Lakes & Simpsons <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">09:50→15:50 via Nairobi</div>
 </div>
 
 <div class="flight-card">
   <div class="flight-date">3 February</div>
-  <div class="flight-route"><span class="from">JNB</span><span class="arrow">&rarr;</span><span class="to">DOH</span><span class="arrow">&rarr;</span><span class="to">LHR</span></div>
-  <div class="flight-detail-row"><strong>Qatar Airways QR1378/QR0109</strong> &middot; Lakes &amp; Simpsons <span class="badge confirmed">Confirmed</span></div>
-  <div class="flight-detail-row">JNB 20:20 &rarr; DOH 05:40 &rarr; LHR 14:00 (+1 day)</div>
+  <div class="flight-route"><span class="from">JNB</span><span class="arrow">→</span><span class="to">DOH</span><span class="arrow">→</span><span class="to">LHR</span></div>
+  <div class="flight-detail-row"><strong>Qatar Airways QR1378/QR0109</strong> · Lakes & Simpsons <span class="badge confirmed">Confirmed</span></div>
+  <div class="flight-detail-row">JNB 20:20 → DOH 05:40 → LHR 14:00 (+1 day)</div>
 </div>
 
 </div>
@@ -1022,17 +1100,200 @@ body {
   <a class="contact-link" href="mailto:lindasimpson99@gmail.com"><span class="link-icon">✉️</span> lindasimpson99@gmail.com</a>
 </div>
 
-<div class="section-header">Hotels &amp; Lodges</div>
+<div class="section-header">Hotels & Lodges</div>
 
 <div class="contact-card">
   <div class="contact-name">Winchester Hotel (NEWMARK)</div>
-  <div class="contact-role">Cape Town &middot; 7&ndash;11 Jan</div>
+  <div class="contact-role">Cape Town · 7–11 Jan</div>
   <a class="contact-link" href="tel:+27214342351"><span class="link-icon">📞</span> +27 21 434 2351</a>
   <a class="contact-link" href="mailto:reservations@newmarkhotels.com"><span class="link-icon">✉️</span> reservations@newmarkhotels.com</a>
 </div>
 
 <div class="contact-card">
   <div class="contact-name">W-Collection Franschhoek</div>
+  <div class="contact-role">Franschhoek · 11–15 Jan · Esme Ongani</div>
+  <a class="contact-link" href="tel:+27785137808"><span class="link-icon">📞</span> +27 78 513 7808</a>
+  <a class="contact-link" href="mailto:reservations@wcollectionfranschhoek.com"><span class="link-icon">✉️</span> reservations@wcollectionfranschhoek.com</a>
+</div>
+
+<div class="contact-card">
+  <div class="contact-name">Sediba Safari Lodge</div>
+  <div class="contact-role">Welgevonden · 15–19 Jan · Wayne</div>
+  <a class="contact-link" href="mailto:wayne@sediba.com"><span class="link-icon">✉️</span> wayne@sediba.com</a>
+  <a class="contact-link" href="mailto:reservations@sediba.com"><span class="link-icon">✉️</span> reservations@sediba.com</a>
+</div>
+
+<div class="contact-card">
+  <div class="contact-name">Leopard Hills</div>
+  <div class="contact-role">Sabi Sands · 19–22 Jan · Carmen Brits</div>
+  <a class="contact-link" href="tel:+27113260739"><span class="link-icon">📞</span> +27 11 326 0739</a>
+  <a class="contact-link" href="mailto:reservations@leopardhills.com"><span class="link-icon">✉️</span> reservations@leopardhills.com</a>
+</div>
+
+<div class="contact-card">
+  <div class="contact-name">Radisson Blu Gautrain</div>
+  <div class="contact-role">Sandton · 22 Jan & 2 Feb</div>
+  <a class="contact-link" href="tel:+27112861000"><span class="link-icon">📞</span> +27 11 286 1000</a>
+</div>
+
+<div class="contact-card">
+  <div class="contact-name">The Mora Zanzibar</div>
+  <div class="contact-role">Matemwe · 23 Jan – 2 Feb · Zena Said</div>
+  <a class="contact-link" href="tel:+255773301038"><span class="link-icon">📞</span> +255 773 301 038</a>
+  <a class="contact-link" href="mailto:reservation.zanzibar@themora.com"><span class="link-icon">✉️</span> reservation.zanzibar@themora.com</a>
+</div>
+
+</div>
+
+<!-- ==================== INFO TAB ==================== -->
+<div class="section" id="section-info">
+
+<div class="info-card">
+  <h3>Health & Entry — South Africa</h3>
+  <ul>
+    <li><strong>Visa:</strong> Not required for UK citizens (stays up to 90 days)</li>
+    <li><strong>Passport:</strong> Valid 30+ days beyond departure, 2 blank pages</li>
+    <li><strong>Yellow Fever:</strong> Not needed arriving from UK</li>
+    <li><strong>Malaria:</strong> Prophylaxis recommended for Sabi Sands / Leopard Hills. Sediba is malaria-free.</li>
+  </ul>
+</div>
+
+<div class="info-card">
+  <h3>Health & Entry — Tanzania / Zanzibar</h3>
+  <ul>
+    <li><strong>Visa:</strong> e-Visa required (US$50). Apply at eservices.immigration.go.tz</li>
+    <li><strong>Passport:</strong> Valid 6+ months from entry (until at least 23 Jul 2027), 2 blank pages</li>
+    <li><strong>Yellow Fever:</strong> STRONGLY RECOMMENDED — flight transits Nairobi (risk country). Must be 10+ days before travel.</li>
+    <li><strong>ZIC Insurance:</strong> MANDATORY. Standard travel insurance NOT accepted.</li>
+    <li><strong>Malaria:</strong> Prophylaxis required for Zanzibar.</li>
+    <li><strong>Recommended vaccines:</strong> Hepatitis A & B, Typhoid, routine boosters (MMR, DTP). Book travel clinic 6–8 weeks before departure.</li>
+  </ul>
+</div>
+
+<div class="info-card">
+  <h3>Key Payment Dates</h3>
+  <ul>
+    <li><strong>ASAP:</strong> W-Collection Franschhoek — PayFast deposit (50% of £1,317)</li>
+    <li><strong>22 Nov 2026:</strong> The Mora auto-charge (US$16,783)</li>
+    <li><strong>5 Dec 2026:</strong> Leopard Hills balance (~R321,552) — unlocks Federal Air tickets</li>
+    <li><strong>11 Dec 2026:</strong> Last free cancellation for Franschhoek</li>
+    <li><strong>31 Dec 2026:</strong> Winchester Hotel auto-charge (ZAR 94,560)</li>
+    <li><strong>1 Jan 2027:</strong> Last free cancellation for Winchester</li>
+    <li><strong>TBC:</strong> Sediba balance (ZAR 136,356) — confirm with Wayne</li>
+  </ul>
+</div>
+
+<div class="info-card">
+  <h3>Cost Summary (per couple, excl. long-haul)</h3>
+  <ul>
+    <li><strong>Winchester Hotel:</strong> £1,443</li>
+    <li><strong>L'Ermitage Villas:</strong> £439</li>
+    <li><strong>Sediba Safari:</strong> £2,494</li>
+    <li><strong>Leopard Hills:</strong> £6,070</li>
+    <li><strong>Radisson Blu (22 Jan):</strong> £101</li>
+    <li><strong>The Mora:</strong> £4,141</li>
+    <li><strong>Flights & Transfers:</strong> £2,483</li>
+    <li style="border-top: 2px solid var(--gold); padding-top: 8px; margin-top: 4px;"><strong>TOTAL PER COUPLE:</strong> £17,171</li>
+  </ul>
+</div>
+
+<div class="info-card">
+  <h3>Luggage Notes</h3>
+  <ul>
+    <li><strong>SAA Domestic:</strong> 1 checked bag (max 23kg) + 1 cabin bag (max 8kg)</li>
+    <li><strong>Federal Air:</strong> 20kg hold + 5kg carry-on. Excess stored at OR Tambo.</li>
+    <li><strong>Kenya Airways:</strong> Check allowance — booked via Flight Network</li>
+    <li><strong>Tip:</strong> Consider booking extra bags on SAA for a 26-day trip</li>
+  </ul>
+</div>
+
+<div class="info-card">
+  <h3>Before You Travel Checklist</h3>
+  <ul>
+    <li><strong>Yellow Fever vaccination</strong> — Book travel clinic ASAP (10+ days before travel)</li>
+    <li><strong>Tanzania e-Visa</strong> — Apply at eservices.immigration.go.tz (US$50)</li>
+    <li><strong>ZIC Insurance</strong> — Zanzibar mandatory inbound travel insurance</li>
+    <li><strong>Malaria prophylaxis</strong> — For Sabi Sands + Zanzibar</li>
+    <li><strong>Passport check</strong> — Valid until at least 23 Jul 2027, 2 blank pages</li>
+    <li><strong>Travel insurance</strong> — Cover safari, medical evacuation, trip cancellation</li>
+    <li><strong>Medical insurance details</strong> — Send to Leopard Hills before travel</li>
+    <li><strong>Select SAA seats</strong> — Via flysaa.com (Refs 7P2HPV / 7PAHJ3)</li>
+  </ul>
+</div>
+
+</div>
+
+</div>
+
+<script>
+// Countdown
+function updateCountdown() {
+  const trip = new Date('2027-01-07T00:00:00');
+  const now = new Date();
+  const diff = trip - now;
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  const el = document.getElementById('countdown-days');
+  const label = document.getElementById('countdown-label');
+  if (days > 0) {
+    el.textContent = days;
+    label.textContent = days === 1 ? 'day to go' : 'days to go';
+  } else if (days >= -26) {
+    el.textContent = '🌍';
+    label.textContent = 'Trip in progress!';
+  } else {
+    el.textContent = '✓';
+    label.textContent = 'Trip complete — what memories!';
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('section-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Day cards toggle
+function toggleDay(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+// Destination section toggle
+function toggleDest(divider) {
+  divider.parentElement.classList.toggle('open');
+}
+
+// Auto-open today's day card (during the trip)
+function autoOpenToday() {
+  const tripStart = new Date('2027-01-07');
+  const now = new Date();
+  const dayNum = Math.floor((now - tripStart) / (1000*60*60*24)) + 1;
+  if (dayNum >= 1 && dayNum <= 28) {
+    const cards = document.querySelectorAll('.day-card');
+    cards.forEach(c => {
+      const header = c.querySelector('.day-num');
+      if (header && header.textContent.includes('Day ' + dayNum)) {
+        c.classList.add('open');
+        setTimeout(() => c.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+      }
+    });
+  }
+}
+autoOpenToday();
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
+ct-name">W-Collection Franschhoek</div>
   <div class="contact-role">Franschhoek &middot; 11&ndash;15 Jan &middot; Esme Ongani</div>
   <a class="contact-link" href="tel:+27785137808"><span class="link-icon">📞</span> +27 78 513 7808</a>
   <a class="contact-link" href="mailto:reservations@wcollectionfranschhoek.com"><span class="link-icon">✉️</span> reservations@wcollectionfranschhoek.com</a>
@@ -1054,13 +1315,13 @@ body {
 
 <div class="contact-card">
   <div class="contact-name">Radisson Blu Gautrain</div>
-  <div class="contact-role">Sandton &middot; 22 Jan &amp; 2 Feb</div>
+  <div class="contact-role">Sandton &middot; 22 Jan & 2 Feb</div>
   <a class="contact-link" href="tel:+27112861000"><span class="link-icon">📞</span> +27 11 286 1000</a>
 </div>
 
 <div class="contact-card">
   <div class="contact-name">The Mora Zanzibar</div>
-  <div class="contact-role">Matemwe &middot; 23 Jan &ndash; 2 Feb &middot; Zena Said</div>
+  <div class="contact-role">Matemwe &middot; 23 Jan – 2 Feb &middot; Zena Said</div>
   <a class="contact-link" href="tel:+255773301038"><span class="link-icon">📞</span> +255 773 301 038</a>
   <a class="contact-link" href="mailto:reservation.zanzibar@themora.com"><span class="link-icon">✉️</span> reservation.zanzibar@themora.com</a>
 </div>
@@ -1071,7 +1332,7 @@ body {
 <div class="section" id="section-info">
 
 <div class="info-card">
-  <h3>Health &amp; Entry &mdash; South Africa</h3>
+  <h3>Health & Entry — South Africa</h3>
   <ul>
     <li><strong>Visa:</strong> Not required for UK citizens (stays up to 90 days)</li>
     <li><strong>Passport:</strong> Valid 30+ days beyond departure, 2 blank pages</li>
@@ -1081,41 +1342,41 @@ body {
 </div>
 
 <div class="info-card">
-  <h3>Health &amp; Entry &mdash; Tanzania / Zanzibar</h3>
+  <h3>Health & Entry — Tanzania / Zanzibar</h3>
   <ul>
     <li><strong>Visa:</strong> e-Visa required (US$50). Apply at eservices.immigration.go.tz</li>
     <li><strong>Passport:</strong> Valid 6+ months from entry (until at least 23 Jul 2027), 2 blank pages</li>
-    <li><strong>Yellow Fever:</strong> STRONGLY RECOMMENDED &mdash; flight transits Nairobi (risk country). Must be 10+ days before travel.</li>
+    <li><strong>Yellow Fever:</strong> STRONGLY RECOMMENDED — flight transits Nairobi (risk country). Must be 10+ days before travel.</li>
     <li><strong>ZIC Insurance:</strong> MANDATORY. Standard travel insurance NOT accepted.</li>
     <li><strong>Malaria:</strong> Prophylaxis required for Zanzibar.</li>
-    <li><strong>Recommended vaccines:</strong> Hepatitis A &amp; B, Typhoid, routine boosters (MMR, DTP). Book travel clinic 6&ndash;8 weeks before departure.</li>
+    <li><strong>Recommended vaccines:</strong> Hepatitis A & B, Typhoid, routine boosters (MMR, DTP). Book travel clinic 6–8 weeks before departure.</li>
   </ul>
 </div>
 
 <div class="info-card">
   <h3>Key Payment Dates</h3>
   <ul>
-    <li><strong>ASAP:</strong> W-Collection Franschhoek &mdash; PayFast deposit (50% of &pound;1,317)</li>
+    <li><strong>ASAP:</strong> W-Collection Franschhoek — PayFast deposit (50% of £1,317)</li>
     <li><strong>22 Nov 2026:</strong> The Mora auto-charge (US$16,783)</li>
-    <li><strong>5 Dec 2026:</strong> Leopard Hills balance (~R321,552) &mdash; unlocks Federal Air tickets</li>
+    <li><strong>5 Dec 2026:</strong> Leopard Hills balance (~R321,552) — unlocks Federal Air tickets</li>
     <li><strong>11 Dec 2026:</strong> Last free cancellation for Franschhoek</li>
     <li><strong>31 Dec 2026:</strong> Winchester Hotel auto-charge (ZAR 94,560)</li>
     <li><strong>1 Jan 2027:</strong> Last free cancellation for Winchester</li>
-    <li><strong>TBC:</strong> Sediba balance (ZAR 136,356) &mdash; confirm with Wayne</li>
+    <li><strong>TBC:</strong> Sediba balance (ZAR 136,356) — confirm with Wayne</li>
   </ul>
 </div>
 
 <div class="info-card">
   <h3>Cost Summary (per couple, excl. long-haul)</h3>
   <ul>
-    <li><strong>Winchester Hotel:</strong> &pound;1,443</li>
-    <li><strong>L'Ermitage Villas:</strong> &pound;439</li>
-    <li><strong>Sediba Safari:</strong> &pound;2,494</li>
-    <li><strong>Leopard Hills:</strong> &pound;6,070</li>
-    <li><strong>Radisson Blu (22 Jan):</strong> &pound;101</li>
-    <li><strong>The Mora:</strong> &pound;4,141</li>
-    <li><strong>Flights &amp; Transfers:</strong> &pound;2,483</li>
-    <li style="border-top: 2px solid var(--gold); padding-top: 8px; margin-top: 4px;"><strong>TOTAL PER COUPLE:</strong> &pound;17,171</li>
+    <li><strong>Winchester Hotel:</strong> £1,443</li>
+    <li><strong>L'Ermitage Villas:</strong> £439</li>
+    <li><strong>Sediba Safari:</strong> £2,494</li>
+    <li><strong>Leopard Hills:</strong> £6,070</li>
+    <li><strong>Radisson Blu (22 Jan):</strong> £101</li>
+    <li><strong>The Mora:</strong> £4,141</li>
+    <li><strong>Flights & Transfers:</strong> £2,483</li>
+    <li style="border-top: 2px solid var(--gold); padding-top: 8px; margin-top: 4px;"><strong>TOTAL PER COUPLE:</strong> £17,171</li>
   </ul>
 </div>
 
@@ -1124,7 +1385,7 @@ body {
   <ul>
     <li><strong>SAA Domestic:</strong> 1 checked bag (max 23kg) + 1 cabin bag (max 8kg)</li>
     <li><strong>Federal Air:</strong> 20kg hold + 5kg carry-on. Excess stored at OR Tambo.</li>
-    <li><strong>Kenya Airways:</strong> Check allowance &mdash; booked via Flight Network</li>
+    <li><strong>Kenya Airways:</strong> Check allowance — booked via Flight Network</li>
     <li><strong>Tip:</strong> Consider booking extra bags on SAA for a 26-day trip</li>
   </ul>
 </div>
@@ -1132,14 +1393,14 @@ body {
 <div class="info-card">
   <h3>Before You Travel Checklist</h3>
   <ul>
-    <li><strong>Yellow Fever vaccination</strong> &mdash; Book travel clinic ASAP (10+ days before travel)</li>
-    <li><strong>Tanzania e-Visa</strong> &mdash; Apply at eservices.immigration.go.tz (US$50)</li>
-    <li><strong>ZIC Insurance</strong> &mdash; Zanzibar mandatory inbound travel insurance</li>
-    <li><strong>Malaria prophylaxis</strong> &mdash; For Sabi Sands + Zanzibar</li>
-    <li><strong>Passport check</strong> &mdash; Valid until at least 23 Jul 2027, 2 blank pages</li>
-    <li><strong>Travel insurance</strong> &mdash; Cover safari, medical evacuation, trip cancellation</li>
-    <li><strong>Medical insurance details</strong> &mdash; Send to Leopard Hills before travel</li>
-    <li><strong>Select SAA seats</strong> &mdash; Via flysaa.com (Refs 7P2HPV / 7PAHJ3)</li>
+    <li><strong>Yellow Fever vaccination</strong> — Book travel clinic ASAP (10+ days before travel)</li>
+    <li><strong>Tanzania e-Visa</strong> — Apply at eservices.immigration.go.tz (US$50)</li>
+    <li><strong>ZIC Insurance</strong> — Zanzibar mandatory inbound travel insurance</li>
+    <li><strong>Malaria prophylaxis</strong> — For Sabi Sands + Zanzibar</li>
+    <li><strong>Passport check</strong> — Valid until at least 23 Jul 2027, 2 blank pages</li>
+    <li><strong>Travel insurance</strong> — Cover safari, medical evacuation, trip cancellation</li>
+    <li><strong>Medical insurance details</strong> — Send to Leopard Hills before travel</li>
+    <li><strong>Select SAA seats</strong> — Via flysaa.com (Refs 7P2HPV / 7PAHJ3)</li>
   </ul>
 </div>
 
