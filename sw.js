@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sa2027-v9';
+const CACHE_NAME = 'sa2027-v10';
 const urlsToCache = ['./index.html', './manifest.json'];
 
 self.addEventListener('install', event => {
