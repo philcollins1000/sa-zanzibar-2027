@@ -616,7 +616,7 @@ body {
   <div class="day-body">
     <div class="alert warning">Three couples arrive via different routes today.</div>
     <div class="section-header">Collins &mdash; Emirates via Dubai</div>
-    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">Arrive Cape Town International <span class="badge confirmed">Confirmed</span></div><div class="notes">Emirates via Dubai. Staff/family ticket via Paul.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">Arrive Cape Town International <span class="badge tobook">To Book</span></div><div class="notes">Emirates via Dubai. Staff/family ticket via Paul &mdash; can't be booked until inside the 3-month window (~early Oct 2026).</div></div></div>
     <div class="timeline-item"><div class="timeline-time">+30m</div><div class="timeline-content"><div class="activity">Uber to Winchester Hotel</div><div class="notes">25&ndash;30 min drive to Sea Point.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-content"><div class="activity">Check in <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 6932301370. King bed.</div></div></div>
     <div class="section-header">Lakes & Simpsons &mdash; Qatar via Doha &amp; JNB</div>
@@ -929,7 +929,7 @@ body {
     <div class="alert warning">Group splits: Collins to Dubai, Lakes &amp; Simpsons to JNB (see Johannesburg 2/2).</div>
     <div class="timeline-item"><div class="timeline-time">~07:30</div><div class="timeline-content"><div class="activity">All 6 transfer to Zanzibar Airport</div><div class="notes">60&ndash;75 min. Share minibus.</div></div></div>
     <div class="section-header">Collins &mdash; FlyDubai to Dubai</div>
-    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">FlyDubai: ZNZ &rarr; Dubai <span class="badge tobook">To Book</span></div><div class="notes">Likely FZ1260 dep 08:00 arr 14:35. Visiting Paul, Emily &amp; grandchildren.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">TBC</div><div class="timeline-content"><div class="activity">FlyDubai: ZNZ &rarr; Dubai <span class="badge tobook">To Book</span></div><div class="notes">Likely FZ1260 dep 08:00 arr 14:35. May need booking direct now rather than via staff travel &mdash; checking with Paul. Visiting Paul, Emily &amp; grandchildren.</div></div></div>
 </div></div>
 
 </div></div>
@@ -1251,9 +1251,9 @@ const TRIP_DATA = {
       section: "Long-Haul Flights",
       date: "6–7 January 2027",
       route: ["LHR", "DXB", "CPT"],
-      details: ["Emirates &middot; Collins only", "Staff/family discount via Paul. ~£2,900"],
-      status: "Confirmed",
-      badge: "confirmed"
+      details: ["Emirates &middot; Collins only", "Staff/family discount via Paul. ~£2,900", "Book ~early Oct 2026 (inside 3-month staff-travel window)"],
+      status: "To Book",
+      badge: "tobook"
     },
     {
       section: "Internal Flights",
@@ -1299,7 +1299,7 @@ const TRIP_DATA = {
       section: "Return Flights",
       date: "2 February",
       route: ["ZNZ", "DXB"],
-      details: ["FlyDubai &middot; Collins only", "Likely FZ1260 dep 08:00, arr Dubai 14:35"],
+      details: ["FlyDubai &middot; Collins only", "Likely FZ1260 dep 08:00, arr Dubai 14:35", "May need direct booking now rather than staff travel — checking with Paul"],
       status: "To Book",
       badge: "tobook"
     },
