@@ -1,5 +1,8 @@
-const CACHE_NAME = 'sa2027-v14';
-const urlsToCache = ['./index.html', './manifest.json'];
+const CACHE_NAME = 'sa2027-v15';
+const urlsToCache = ['./index.html', './manifest.json',
+  './img/robben-qr-phil.png', './img/robben-qr-dawn.png', './img/robben-qr-chris.png',
+  './img/robben-qr-jacquie.png', './img/robben-qr-john.png', './img/robben-qr-linda.png',
+  './tickets/robben-island-RT2526k3tgrcza.pdf'];
 
 self.addEventListener('install', event => {
   event.waitUntil(

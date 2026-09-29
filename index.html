@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="version" content="v14">
+<meta name="version" content="v15">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -213,6 +213,14 @@ body {
 .badge.pending { background: rgba(230,126,34,0.2); color: var(--orange); }
 .badge.tobook { background: rgba(220,53,69,0.2); color: var(--red); }
 .badge.consider { background: rgba(52,152,219,0.2); color: var(--blue); }
+.notes a { color: var(--gold-light); }
+.tickets { margin-top: 8px; }
+.tickets summary { cursor: pointer; color: var(--green); font-weight: 600; padding: 6px 0; }
+.ticket-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 8px; }
+.ticket-card { background: #fff; color: #111; border-radius: 8px; padding: 8px; text-align: center; }
+.ticket-card img { width: 100%; height: auto; display: block; image-rendering: pixelated; }
+.ticket-card .t-name { font-weight: 600; font-size: 0.85em; margin-top: 4px; }
+.ticket-card .t-id { font-size: 0.65em; color: #555; word-break: break-all; }
 .badge.idea { background: rgba(155,89,182,0.2); color: #9b59b6; }
 
 /* Activity Ideas Card */
@@ -580,7 +588,7 @@ body {
   </div>
   <div class="day-body">
     <div class="section-header">Key Attractions</div>
-    <div class="timeline-item"><div class="timeline-time">🏝️</div><div class="timeline-content"><div class="activity">Robben Island <span class="badge pending">Jan dates not yet available</span></div><div class="notes">Planned: Day 4 (10 Jan), afternoon. Ferry from Nelson Mandela Gateway, V&amp;A Waterfront. ~3.5 hrs guided tour inc. prison walk with former political prisoner. ~R825pp. Ferries depart 09:00, 11:00, 13:00, 15:00 &mdash; aim for 13:00 after Table Mountain. ⚠️ January 2027 dates not yet on sale as of 31 May 2026. Check monthly from end of June. Book at <a href="https://webtickets.co.za/events/tourism/robben-island-museum-tour/76219" target="_blank">webtickets.co.za</a></div></div></div>
+    <div class="timeline-item"><div class="timeline-time">🏝️</div><div class="timeline-content"><div class="activity">Robben Island <span class="badge confirmed">Booked &mdash; Day 4, 13:00 ferry</span></div><div class="notes">Sun 10 Jan. Board 12:15&ndash;12:50 at the Nelson Mandela Gateway, V&amp;A Waterfront. 6 tickets, order RT2526k3tgrcza, R3,600 paid. Tickets and QR codes are on Day 4.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">🏔️</div><div class="timeline-content"><div class="activity">Table Mountain <span class="badge confirmed">Day 4 &mdash; 10 Jan AM</span></div><div class="notes">Cable car up (~R395 return). Go early &mdash; closes in high wind. Allow 2&ndash;3 hrs. Then Robben Island afternoon ferry.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">🚗</div><div class="timeline-content"><div class="activity">Cape Point &amp; Cape of Good Hope <span class="badge idea">Idea</span></div><div class="notes">Full-day trip to the tip of the Peninsula. Combine with Boulders Beach penguins. 1.5&ndash;2 hrs each way.</div></div></div>
     <div class="section-header">Wine Tours (Linda's Itinerary)</div>
@@ -609,7 +617,7 @@ body {
     <div>
       <div class="day-num">Day 1</div>
       <div class="day-title">Arrival in Cape Town</div>
-      <div class="day-date">Wednesday 7 January</div>
+      <div class="day-date">Thursday 7 January</div>
     </div>
     <div class="chevron">▼</div>
   </div>
@@ -630,7 +638,7 @@ body {
 
 <div class="day-card" id="day2">
   <div class="day-header" onclick="toggleDay(this)">
-    <div><div class="day-num">Day 2</div><div class="day-title">Cape Town</div><div class="day-date">Thursday 8 January</div></div>
+    <div><div class="day-num">Day 2</div><div class="day-title">Cape Town</div><div class="day-date">Friday 8 January</div></div>
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
@@ -641,7 +649,7 @@ body {
 
 <div class="day-card" id="day3">
   <div class="day-header" onclick="toggleDay(this)">
-    <div><div class="day-num">Day 3</div><div class="day-title">Constantia Wine Tour</div><div class="day-date">Friday 9 January</div></div>
+    <div><div class="day-num">Day 3</div><div class="day-title">Constantia Wine Tour</div><div class="day-date">Saturday 9 January</div></div>
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
@@ -653,13 +661,13 @@ body {
 
 <div class="day-card" id="day4">
   <div class="day-header" onclick="toggleDay(this)">
-    <div><div class="day-num">Day 4</div><div class="day-title">Table Mountain + Robben Island + La Colombe</div><div class="day-date">Saturday 10 January</div></div>
+    <div><div class="day-num">Day 4</div><div class="day-title">Table Mountain + Robben Island + La Colombe</div><div class="day-date">Sunday 10 January</div></div>
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
     <div class="timeline-item"><div class="timeline-time">Morning</div><div class="timeline-content"><div class="activity">Table Mountain <span class="badge confirmed">Confirmed</span></div><div class="notes">Cable car up (~R395 return). Go early &mdash; closes in high wind. Allow 2&ndash;3 hrs at the top.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~12:00</div><div class="timeline-content"><div class="activity">Lunch near V&amp;A Waterfront</div><div class="notes">Between Table Mountain and Robben Island ferry. Grab something casual at the Waterfront.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">~13:00</div><div class="timeline-content"><div class="activity">Robben Island Tour <span class="badge pending">To book — Jan dates not yet on sale</span></div><div class="notes">Ferry from Nelson Mandela Gateway, V&amp;A Waterfront. ~3.5 hrs total inc. return ferry. Guided by former political prisoner. ~R825pp. ⚠️ January 2027 dates not yet available as of 31 May 2026. Checking monthly. Book at <a href="https://webtickets.co.za/events/tourism/robben-island-museum-tour/76219" target="_blank">webtickets.co.za</a> when live &mdash; January sells out fast.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">~11:15</div><div class="timeline-content"><div class="activity">Lunch near V&amp;A Waterfront</div><div class="notes">Quick and casual, close to the Nelson Mandela Gateway &mdash; Robben Island boarding closes at 12:50. Leave Table Mountain by about 10:45.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">12:15</div><div class="timeline-content"><div class="activity">Robben Island Tour &mdash; 13:00 ferry <span class="badge confirmed">Booked</span></div><div class="notes">Board at the Nelson Mandela Gateway, V&amp;A Waterfront, 8001. <strong>Boarding opens 12:15, closes 12:50.</strong> No refunds or rescheduling if boarding is missed. ~3.5 hrs inc. return ferry, back ~16:30. Photo ID required. No drones or filming kit. Order RT2526k3tgrcza &middot; 6 x International Adult @ R600 = R3,600, paid by Amex 29 Sep 2026 (PayGenius). <a href="https://goo.gl/maps/Af9NGRV6qR1h69jM8" target="_blank">Directions</a><details class="tickets"><summary>🎟️ Show tickets &amp; QR codes (6)</summary><div class="ticket-grid"><div class="ticket-card"><img src="img/robben-qr-phil.png" alt="Robben Island ticket QR - Phil Collins"><div class="t-name">Phil Collins</div><div class="t-id">fcb7b2205dd7</div></div><div class="ticket-card"><img src="img/robben-qr-dawn.png" alt="Robben Island ticket QR - Dawn McGiveron"><div class="t-name">Dawn McGiveron</div><div class="t-id">ab0b4a5f2fff</div></div><div class="ticket-card"><img src="img/robben-qr-chris.png" alt="Robben Island ticket QR - Christopher Lake"><div class="t-name">Christopher Lake</div><div class="t-id">ea048e5bdd1e</div></div><div class="ticket-card"><img src="img/robben-qr-jacquie.png" alt="Robben Island ticket QR - Jacqueline Lake"><div class="t-name">Jacqueline Lake</div><div class="t-id">fdf2efdce95c</div></div><div class="ticket-card"><img src="img/robben-qr-john.png" alt="Robben Island ticket QR - John Simpson"><div class="t-name">John Simpson</div><div class="t-id">ce97b589529e</div></div><div class="ticket-card"><img src="img/robben-qr-linda.png" alt="Robben Island ticket QR - Linda Simpson"><div class="t-name">Linda Simpson</div><div class="t-id">af907b282ec7</div></div></div><p style="margin-top:8px">One QR per person, one entry each. Turn screen brightness up at the gate. <a href="tickets/robben-island-RT2526k3tgrcza.pdf" target="_blank">Open PDF tickets</a></p></details></div></div></div>
     <div class="timeline-item"><div class="timeline-time">~17:00</div><div class="timeline-content"><div class="activity">Return to Winchester &mdash; freshen up &amp; pack for tomorrow</div></div></div>
     <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-content"><div class="activity">La Colombe &mdash; farewell Cape Town dinner <span class="badge confirmed">Confirmed</span></div><div class="notes">Silvermist Wine Estate, Constantia Nek. 6 covers, Main Restaurant. Ref: CC3833360. Deposit paid: R6,010. Cancel 48+ hrs for full refund. reservations@lacolombe.co.za / +27 21 794 2390.</div></div></div>
   </div>
@@ -710,7 +718,7 @@ body {
 
 <div class="day-card" id="day5">
   <div class="day-header" onclick="toggleDay(this)">
-    <div><div class="day-num">Day 5 &mdash; Travel</div><div class="day-title">Cape Town &rarr; Franschhoek</div><div class="day-date">Sunday 11 January</div></div>
+    <div><div class="day-num">Day 5 &mdash; Travel</div><div class="day-title">Cape Town &rarr; Franschhoek</div><div class="day-date">Monday 11 January</div></div>
     <div class="chevron">▼</div>
   </div>
   <div class="day-body">
@@ -724,21 +732,21 @@ body {
   </div>
 </div>
 
-<div class="day-card" id="day6"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 6</div><div class="day-title">Franschhoek &mdash; Explore</div><div class="day-date">Monday 12 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day6"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 6</div><div class="day-title">Franschhoek &mdash; Explore</div><div class="day-date">Tuesday 12 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="timeline-item"><div class="timeline-time">Morning</div><div class="timeline-content"><div class="activity">Babylon Store</div><div class="notes">5-hectare biodynamic garden, artisan factories, balsamic, soaps, coffee roastery, restaurant. Worth a morning.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Afternoon</div><div class="timeline-content"><div class="activity">Franschhoek Motor Museum</div><div class="notes">100&ndash;220 vintage and classic cars on display. On the L&apos;Ormarins estate. Surprisingly impressive.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~10 min</div><div class="timeline-content"><div class="activity">Huguenot Monument</div><div class="notes">Drive-by / quick stop. Town&apos;s French Huguenot heritage. Nice photo opportunity.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Franschhoek</div><div class="notes">Phil to book. Options: Monneaux, Hari Kitchen, or walk the main street.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day7"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 7</div><div class="day-title">Franschhoek &mdash; Wine Day</div><div class="day-date">Tuesday 13 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day7"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 7</div><div class="day-title">Franschhoek &mdash; Wine Day</div><div class="day-date">Wednesday 13 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Franschhoek wine tour <span class="badge confirmed">Confirmed</span></div><div class="notes">Two wineries (Winnie Bowman&apos;s picks) then lunch at La Motte. Linda coordinating via Winnie. TUK TUK or Uber between stops.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Lunch</div><div class="timeline-content"><div class="activity">Lunch at La Motte <span class="badge confirmed">Confirmed</span></div><div class="notes">Renowned estate restaurant. Walking trails and farm shop on site. Linda to book via Winnie contact.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Aft</div><div class="timeline-content"><div class="activity">Return to L&apos;Ermitage &mdash; relax</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Franschhoek</div><div class="notes">Phil to book. Light evening after big lunch &mdash; Hari Kitchen or Chef&apos;s Warehouse.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day8"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 8</div><div class="day-title">Franschhoek &mdash; Free Day</div><div class="day-date">Wednesday 14 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day8"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 8</div><div class="day-title">Franschhoek &mdash; Free Day</div><div class="day-date">Thursday 14 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Pack tonight &mdash; early departure tomorrow for SA 316 09:00 to JNB.</div>
     <div class="timeline-item"><div class="timeline-time">All day</div><div class="timeline-content"><div class="activity">Non-wine day &mdash; own choice</div><div class="notes">Options: Uber to Stellenbosch (20 mins) for a town wander; pool day at L&apos;Ermitage; more Franschhoek village. For the brave: AK-47 shooting range near False Bay or Cape Town (45&ndash;60 mins away &mdash; John&apos;s suggestion, entirely optional!). Jax/Linda may prefer pool or shopping.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Last dinner in Franschhoek</div><div class="notes">Phil to book. Hari Kitchen, Chef&apos;s Warehouse at Maison, or Monneaux.</div></div></div>
@@ -760,7 +768,7 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day9"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 9 &mdash; Major Travel</div><div class="day-title">Franschhoek &rarr; JNB &rarr; Sediba</div><div class="day-date">Thursday 15 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day9"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 9 &mdash; Major Travel</div><div class="day-title">Franschhoek &rarr; JNB &rarr; Sediba</div><div class="day-date">Friday 15 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Major travel day &mdash; Flight + 3.5&ndash;4 hour road transfer</div>
     <div class="timeline-item"><div class="timeline-time">~06:00</div><div class="timeline-content"><div class="activity">Depart Franschhoek for CPT Airport</div><div class="notes">Allow 1.5 hrs for the drive.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">SA 316: CPT &rarr; JNB (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Refs 7P2HPV / 7PAHJ3. 2h, Economy.</div></div></div>
@@ -769,7 +777,7 @@ body {
     <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">Arrive Sediba &mdash; Afternoon game drive</div><div class="notes">Settle in, then sunset drive.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day10-12"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 10&ndash;12</div><div class="day-title">Sediba Game Drives</div><div class="day-date">Fri 16 &ndash; Sun 18 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day10-12"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 10&ndash;12</div><div class="day-title">Sediba Game Drives</div><div class="day-date">Fri 16 &ndash; Mon 18 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert info">Malaria-free Big Five reserve. All meals &amp; drinks included.</div>
     <div class="section-header">Typical Safari Day</div>
     <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Wake-up call, coffee &amp; rusks</div></div></div>
@@ -797,7 +805,7 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day13"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 13 &mdash; Travel</div><div class="day-title">Sediba &rarr; Leopard Hills</div><div class="day-date">Monday 19 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day13"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 13 &mdash; Travel</div><div class="day-title">Sediba &rarr; Leopard Hills</div><div class="day-date">Tuesday 19 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Travel day &mdash; Road transfer + Federal Air flight</div>
     <div class="timeline-item"><div class="timeline-time">~06:00</div><div class="timeline-content"><div class="activity">Optional short morning game drive</div><div class="notes">Final morning at Sediba.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~08:15</div><div class="timeline-content"><div class="activity">Depart Sediba for OR Tambo</div><div class="notes">3.5&ndash;4 hr road transfer via N1.</div></div></div>
@@ -806,7 +814,7 @@ body {
     <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">First Sabi Sands game drive</div><div class="notes">Renowned Big Five and leopard sightings.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day14-15"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 14&ndash;15</div><div class="day-title">Leopard Hills Game Drives</div><div class="day-date">Tue 20 &ndash; Wed 21 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day14-15"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 14&ndash;15</div><div class="day-title">Leopard Hills Game Drives</div><div class="day-date">Tue 20 &ndash; Thu 21 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">MALARIA AREA &mdash; Take prophylaxis as prescribed. Repellent essential at dawn/dusk.</div>
     <div class="section-header">Typical Safari Day</div>
     <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-content"><div class="activity">Wake-up, coffee</div></div></div>
@@ -833,7 +841,7 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day16"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 16 &mdash; Travel</div><div class="day-title">Leopard Hills &rarr; JNB</div><div class="day-date">Thursday 22 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day16"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 16 &mdash; Travel</div><div class="day-title">Leopard Hills &rarr; JNB</div><div class="day-date">Friday 22 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Pack for Zanzibar tonight! KQ761 departs 12:05 tomorrow.</div>
     <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-content"><div class="activity">Last morning game drive</div><div class="notes">Make it count!</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:00</div><div class="timeline-content"><div class="activity">Check out of Leopard Hills</div></div></div>
@@ -859,7 +867,7 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day17"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 17 &mdash; Travel</div><div class="day-title">JNB &rarr; Zanzibar</div><div class="day-date">Friday 23 January</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day17"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 17 &mdash; Travel</div><div class="day-title">JNB &rarr; Zanzibar</div><div class="day-date">Saturday 23 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">e-Visa &amp; ZIC insurance docs required. Have in hand luggage! No Yellow Fever certificate needed &mdash; see Health tab.</div>
     <div class="timeline-item"><div class="timeline-time">~08:00</div><div class="timeline-content"><div class="activity">Check out Radisson, Gautrain to OR Tambo</div></div></div>
     <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-content"><div class="activity">KQ761: JNB &rarr; Nairobi (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Collins FN 1117-451-559. L&S FN 1112-214-736.</div></div></div>
@@ -869,7 +877,7 @@ body {
     <div class="timeline-item"><div class="timeline-time">~21:15</div><div class="timeline-content"><div class="activity">Arrive The Mora</div><div class="notes">Welcome and check in. First evening on the beach!</div></div></div>
 </div></div>
 
-<div class="day-card" id="day18-26"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 18&ndash;26</div><div class="day-title">Zanzibar at Leisure</div><div class="day-date">Sat 24 Jan &ndash; Sun 1 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day18-26"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Days 18&ndash;26</div><div class="day-title">Zanzibar at Leisure</div><div class="day-date">Sun 24 Jan &ndash; Mon 1 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert info">MALARIA AREA &mdash; Continue taking prophylaxis throughout your stay.</div>
     <div class="section-header">Suggested Activities (all optional)</div>
     <div class="timeline-item"><div class="timeline-time">Any day</div><div class="timeline-content"><div class="activity">Beach &amp; pool at The Mora</div><div class="notes">White sand, Indian Ocean.</div></div></div>
@@ -895,14 +903,14 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day27-jnb"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Arrive JNB</div><div class="day-title">Zanzibar &rarr; Johannesburg</div><div class="day-date">Monday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day27-jnb"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Arrive JNB</div><div class="day-title">Zanzibar &rarr; Johannesburg</div><div class="day-date">Tuesday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Lakes &amp; Simpsons only. Collins head to Dubai.</div>
     <div class="timeline-item"><div class="timeline-time">09:50</div><div class="timeline-content"><div class="activity">KQ491/KQ762: ZNZ &rarr; JNB <span class="badge confirmed">Confirmed</span></div><div class="notes">7h via Nairobi. Arrive JNB 15:50.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~16:30</div><div class="timeline-content"><div class="activity">Check in Radisson Blu Sandton <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 5090900298. 2 rooms.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Sandton</div><div class="notes">Last evening together. Nelson Mandela Square area.</div></div></div>
 </div></div>
 
-<div class="day-card" id="day28-jnb"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 28 &mdash; Fly Home</div><div class="day-title">Johannesburg &rarr; London via Doha</div><div class="day-date">Tuesday 3 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day28-jnb"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 28 &mdash; Fly Home</div><div class="day-title">Johannesburg &rarr; London via Doha</div><div class="day-date">Wednesday 3 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="timeline-item"><div class="timeline-time">AM</div><div class="timeline-content"><div class="activity">Free morning in Sandton</div><div class="notes">Flight not until 20:20. Relax, explore.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-content"><div class="activity">Check out Radisson Blu</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~17:30</div><div class="timeline-content"><div class="activity">Gautrain to OR Tambo</div></div></div>
@@ -925,7 +933,7 @@ body {
 </div>
 <div class="dest-body">
 
-<div class="day-card" id="day27"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Departure</div><div class="day-title">Zanzibar &rarr; Dubai</div><div class="day-date">Monday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
+<div class="day-card" id="day27"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Departure</div><div class="day-title">Zanzibar &rarr; Dubai</div><div class="day-date">Tuesday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Group splits: Collins to Dubai, Lakes &amp; Simpsons to JNB (see Johannesburg 2/2).</div>
     <div class="timeline-item"><div class="timeline-time">~07:30</div><div class="timeline-content"><div class="activity">All 6 transfer to Zanzibar Airport</div><div class="notes">60&ndash;75 min. Share minibus.</div></div></div>
     <div class="section-header">Collins &mdash; FlyDubai to Dubai</div>
