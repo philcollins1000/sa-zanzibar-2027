@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="version" content="v22">
+<meta name="version" content="v23">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -632,7 +632,7 @@ body {
     <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-content"><div class="activity">Check in <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 6932301370. King bed.</div></div></div>
     <div class="section-header">Lakes & Simpsons &mdash; Qatar via Doha &amp; JNB</div>
     <div class="timeline-item"><div class="timeline-time">03:55</div><div class="timeline-content"><div class="activity">Arrive OR Tambo (QR 1365) <span class="badge confirmed">Confirmed</span></div><div class="notes">Departed LHR 08:35 on 6 Jan. Terminal A.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">08:10</div><div class="timeline-content"><div class="activity">SA 313: JNB &rarr; CPT <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Ref 7P2HPV. 2h 15m, Economy.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">08:10</div><div class="timeline-content"><div class="activity">SA 313: JNB &rarr; CPT <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Ref 7P2HPV. 2h 15m, Economy. Terminal B, check-in closes 07:30. Seats: Jax 14B, Chris 14C, John 14D, Linda 14E. 1 bag each, max 23kg.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">10:25</div><div class="timeline-content"><div class="activity">Arrive Cape Town</div><div class="notes">Collect bags. 1PC each, max 23kg.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:00</div><div class="timeline-content"><div class="activity">Arrive Winchester Hotel</div><div class="notes">May be early for check-in (14:00). Drop bags.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">First group dinner</div><div class="notes">Casual &mdash; walk into somewhere on Regent Rd or the promenade. Posticino (Italian), Kiki (Greek meze), or Rockpool (sea views). No booking needed on arrival night.</div></div></div>
@@ -787,7 +787,7 @@ body {
 <div class="day-card" id="day9"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 9 &mdash; Major Travel</div><div class="day-title">Franschhoek &rarr; JNB &rarr; Sediba</div><div class="day-date">Friday 15 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Major travel day &mdash; Flight + 3.5&ndash;4 hour road transfer</div>
     <div class="timeline-item"><div class="timeline-time">~06:00</div><div class="timeline-content"><div class="activity">Depart Franschhoek for CPT Airport</div><div class="notes">Allow 1.5 hrs for the drive.</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">SA 316: CPT &rarr; JNB (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">SAA Refs 7P2HPV / 7PAHJ3. 2h, Economy.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-content"><div class="activity">SA 316: CPT &rarr; JNB (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Terminal B, check-in closes 08:20. 2h, Economy, 1 bag each max 23kg.<br>Lakes &amp; Simpsons (Ref 7P2HPV): Jax 14B, Chris 14C, John 14D, Linda 14E.<br>Collins (Ref 7PAHJ3): seats to be picked.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-content"><div class="activity">Arrive OR Tambo</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~11:30</div><div class="timeline-content"><div class="activity">Meet Sediba road transfer <span class="badge pending">To Arrange</span></div><div class="notes">R6,000 per way. 3.5&ndash;4 hr drive to Welgevonden.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~16:00</div><div class="timeline-content"><div class="activity">Arrive Sediba &mdash; Afternoon game drive</div><div class="notes">Settle in, then sunset drive.</div></div></div>
@@ -1199,7 +1199,7 @@ body {
     <li><strong>Passport check</strong> &mdash; Valid until at least 23 Jul 2027, 2 blank pages</li>
     <li><strong>Travel insurance</strong> &mdash; Cover safari, medical evacuation, trip cancellation</li>
     <li><strong>Medical insurance details</strong> &mdash; Send to Leopard Hills before travel</li>
-    <li><strong>Select SAA seats</strong> &mdash; Via flysaa.com (Refs 7P2HPV / 7PAHJ3)</li>
+    <li><strong>Select SAA seats</strong> &mdash; Lakes &amp; Simpsons done (row 14, both flights, Ref 7P2HPV). Collins still to pick, Ref 7PAHJ3, via flysaa.com Manage Booking</li>
   </ul>
 </div>
 
@@ -1329,7 +1329,7 @@ const TRIP_DATA = {
       section: "Internal Flights",
       date: "7 January",
       route: ["JNB", "CPT"],
-      details: ["SA 313 08:10&rarr;10:25 &middot; Lakes & Simpsons", "SAA Ref 7P2HPV &middot; Economy"],
+      details: ["SA 313 08:10&rarr;10:25 &middot; Lakes & Simpsons", "SAA Ref 7P2HPV &middot; Economy &middot; Terminal B", "Seats 14B Jax, 14C Chris, 14D John, 14E Linda"],
       status: "Confirmed",
       badge: "confirmed"
     },
@@ -1337,7 +1337,7 @@ const TRIP_DATA = {
       section: "Internal Flights",
       date: "15 January",
       route: ["CPT", "JNB"],
-      details: ["SA 316 09:00&rarr;11:00 &middot; All 6", "Refs 7P2HPV / 7PAHJ3 &middot; Economy"],
+      details: ["SA 316 09:00&rarr;11:00 &middot; All 6", "Refs 7P2HPV / 7PAHJ3 &middot; Economy &middot; Terminal B", "Lakes & Simpsons 14B&ndash;14E &middot; Collins seats TBC"],
       status: "Confirmed",
       badge: "confirmed"
     },
