@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="version" content="v25">
+<meta name="version" content="v26">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -886,7 +886,7 @@ body {
 <div class="day-card" id="day17"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 17 &mdash; Travel</div><div class="day-title">JNB &rarr; Zanzibar</div><div class="day-date">Saturday 23 January</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">e-Visa &amp; ZIC insurance docs required. Have in hand luggage! No Yellow Fever certificate needed &mdash; see Health tab.</div>
     <div class="timeline-item"><div class="timeline-time">~08:00</div><div class="timeline-content"><div class="activity">Check out Radisson, Gautrain to OR Tambo</div></div></div>
-    <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-content"><div class="activity">KQ761: JNB &rarr; Nairobi (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Collins FN 1117-451-559. L&S FN 1112-214-736.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-content"><div class="activity">KQ761: JNB &rarr; Nairobi (all 6) <span class="badge confirmed">Confirmed</span></div><div class="notes">Collins FN 1117-451-559. L&S FN 1112-214-736.<br>Seats JNB&ndash;NBO: Chris 25J, Jax 25H, John 25G, Linda 25F (none allocated NBO&ndash;ZNZ).<br>E-tickets (L&amp;S, all legs): Chris 706-5466833417, Jax 706-5466833418, John 706-5466833419, Linda 706-5466833420.<br>Each: 1 personal item, 8kg hand bag, 2 &times; 23kg checked.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">NBO</div><div class="timeline-content"><div class="activity">Transit &rarr; KQ494: NBO &rarr; ZNZ</div><div class="notes">Total journey 6h 55m.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-content"><div class="activity">Arrive Zanzibar</div><div class="notes">Immigration: e-Visa + ZIC insurance.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">+75m</div><div class="timeline-content"><div class="activity">Minibus to The Mora <span class="badge confirmed">Confirmed</span></div><div class="notes">60&ndash;75 min. Toyota Minibus, $150 for all 6 &mdash; pay on arrival by credit card. Driver will hold Mora sign.</div></div></div>
@@ -921,7 +921,7 @@ body {
 
 <div class="day-card" id="day27-jnb"><div class="day-header" onclick="toggleDay(this)"><div><div class="day-num">Day 27 &mdash; Arrive JNB</div><div class="day-title">Zanzibar &rarr; Johannesburg</div><div class="day-date">Tuesday 2 February</div></div><div class="chevron">▼</div></div><div class="day-body">
     <div class="alert warning">Lakes &amp; Simpsons only. Collins head to Dubai.</div>
-    <div class="timeline-item"><div class="timeline-time">09:50</div><div class="timeline-content"><div class="activity">KQ491/KQ762: ZNZ &rarr; JNB <span class="badge confirmed">Confirmed</span></div><div class="notes">7h via Nairobi. Arrive JNB 15:50.</div></div></div>
+    <div class="timeline-item"><div class="timeline-time">09:50</div><div class="timeline-content"><div class="activity">KQ491/KQ762: ZNZ &rarr; JNB <span class="badge confirmed">Confirmed</span></div><div class="notes">7h via Nairobi. Arrive JNB 15:50.<br>Seats NBO&ndash;JNB: Chris 25A, Jax 25B, John 25J, Linda 25H (none allocated ZNZ&ndash;NBO).<br>E-tickets (L&amp;S, all legs): Chris 706-5466833417, Jax 706-5466833418, John 706-5466833419, Linda 706-5466833420.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">~16:30</div><div class="timeline-content"><div class="activity">Check in Radisson Blu Sandton <span class="badge confirmed">Confirmed</span></div><div class="notes">Ref 5090900298. 2 rooms.</div></div></div>
     <div class="timeline-item"><div class="timeline-time">Eve</div><div class="timeline-content"><div class="activity">Dinner in Sandton</div><div class="notes">Last evening together. Nelson Mandela Square area.</div></div></div>
 </div></div>
@@ -1361,7 +1361,7 @@ const TRIP_DATA = {
       section: "Internal Flights",
       date: "23 January",
       route: ["JNB", "NBO", "ZNZ"],
-      details: ["Kenya Airways KQ761/KQ494 &middot; All 6", "12:05&rarr;20:00 via Nairobi &middot; Collins £936, L&S £1,280/couple"],
+      details: ["Kenya Airways KQ761/KQ494 &middot; All 6", "12:05&rarr;20:00 via Nairobi &middot; Collins £936, L&S £1,280/couple", "L&S e-tickets 706-54668334xx: Chris 17, Jax 18, John 19, Linda 20", "L&S seats JNB&ndash;NBO: Chris 25J, Jax 25H, John 25G, Linda 25F"],
       status: "Confirmed",
       badge: "confirmed"
     },
@@ -1377,7 +1377,7 @@ const TRIP_DATA = {
       section: "Return Flights",
       date: "2 February",
       route: ["ZNZ", "NBO", "JNB"],
-      details: ["Kenya Airways KQ491/KQ762 &middot; Lakes & Simpsons", "09:50&rarr;15:50 via Nairobi"],
+      details: ["Kenya Airways KQ491/KQ762 &middot; Lakes & Simpsons", "09:50&rarr;15:50 via Nairobi", "E-tickets 706-54668334xx: Chris 17, Jax 18, John 19, Linda 20", "Seats NBO&ndash;JNB: Chris 25A, Jax 25B, John 25J, Linda 25H"],
       status: "Confirmed",
       badge: "confirmed"
     },
