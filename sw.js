@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sa2027-v27';
+const CACHE_NAME = 'sa2027-v28';
 const urlsToCache = ['./index.html', './manifest.json',
   './img/robben-qr-phil.png', './img/robben-qr-dawn.png', './img/robben-qr-chris.png',
   './img/robben-qr-jacquie.png', './img/robben-qr-john.png', './img/robben-qr-linda.png',
